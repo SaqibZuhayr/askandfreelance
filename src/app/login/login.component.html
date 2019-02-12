@@ -1,0 +1,51 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center space">User Login</h5>
+          <form class="form-signin" (submit)="onlogin(onloginf)" #onloginf="ngForm">
+            <div class="form-label-group">
+              <input type="email" id="inputEmail" name="emailtext" class="form-control" placeholder="Email address" autofocus ngModel
+                     #emailinput="ngModel" required email>
+            </div>
+            <div *ngIf="emailinput.invalid && emailinput.dirty && emailinput.touched"
+                 class="alert alert-danger">
+              <div *ngIf="emailinput.errors.required">
+                Email is required.
+              </div>
+              <div *ngIf="emailinput.errors.email">
+                Email is not valid.
+              </div>
+            </div>
+
+
+            <div class="form-label-group password-space">
+              <input type="password" id="inputPassword" class="form-control" name="passtext" placeholder="Password" ngModel
+                     #passinput="ngModel" required>
+            </div>
+            <div *ngIf="passinput.invalid && passinput.dirty && passinput.touched"
+                 class="alert alert-danger">
+              <div *ngIf="passinput.errors.required">
+                Password is required.
+              </div>
+            </div>
+
+            <!--<div class="custom-control custom-checkbox mb-3">-->
+              <!--<input type="checkbox" class="custom-control-input" id="customCheck1">-->
+              <!--<label class="custom-control-label" for="customCheck1">Remember password</label>-->
+            <!--</div>-->
+
+            <button type="submit" class="btn btn-lg btn-info btn-block btn-color">Login</button>
+
+            <div class="choice">
+              <a routerLink="signup" class="password-space">&nbsp;Signup</a>
+              <a style="float: right" routerLink="#">Forgot Password?</a>
+            </div>
+            <div style="clear: both"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
