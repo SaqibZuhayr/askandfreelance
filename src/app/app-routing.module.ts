@@ -10,6 +10,7 @@ import {AnswercomponentComponent} from './answercomponent/answercomponent.compon
 import {FreelanceMainComponent} from './freelance-main/freelance-main.component';
 import {GigsMainComponent} from './gigs-main/gigs-main.component';
 import {GigsDetailsComponent} from './gigs-details/gigs-details.component';
+import {PostquestionComponent} from './postquestion/postquestion.component';
 
 const routes: Routes = [
   {path : '', component : LoginComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
     children: [
       {path: '', component: QuestionsComponent},
       {path: 'answer/:id', component: AnswercomponentComponent},
+      {path: 'postquestion', component: PostquestionComponent},
       {path: 'freelance', component: FreelanceMainComponent,
         children: [
           {path: '', component: GigsMainComponent},

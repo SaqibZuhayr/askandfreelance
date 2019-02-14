@@ -18,22 +18,22 @@ export class LoginComponent implements OnInit {
   }
 
   onlogin(form: NgForm) {
-    console.log("abc")
+    console.log('abc');
     if (form.invalid) {
       return;
     }
-    console.log("abc")
+    console.log('abc');
     this.http.post('http://localhost:3000/user/auth', {
       'email': form.value.emailtext,
       'password': form.value.passtext,
     }).subscribe((data) => {
       console.log(data);
-      if (data[0]["_id"]) {
+      if (data[0]['_id']) {
           this.route.navigate(['main']);
-        //return;
+        // return;
       } else {
-        alert("wrong credentails");
-        //return;
+        alert('wrong credentails');
+        // return;
 
       }
     });
