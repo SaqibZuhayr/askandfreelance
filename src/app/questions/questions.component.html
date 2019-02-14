@@ -15,7 +15,7 @@
               <p class="card-text small question">User</p>
             </div>
             <div class="col-md-9">
-              <p><a routerLink="answer" class="card-link">{{q.question}}</a></p>
+              <p><a routerLink="answer/{{q._id}}" class="card-link">{{q.question}}</a></p>
             </div>
           </div>
           <div class="row">
@@ -23,8 +23,8 @@
               <p>10views</p>
             </div>
             <div class="col-sm-2 small">
-              <a href="#" class="card-link">php</a>
-              <a href="#" class="card-link">php</a>
+              <a href="#" class="card-link">{{q.category}}</a>
+              <a href="#" class="card-link">{{q.category}}</a>
             </div>
           </div>
         </div>

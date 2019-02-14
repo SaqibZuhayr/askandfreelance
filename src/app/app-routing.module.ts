@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'main', component: UserMainComponent,
     children: [
       {path: '', component: QuestionsComponent},
-      {path: 'answer', component: AnswercomponentComponent},
+      {path: 'answer/:id', component: AnswercomponentComponent},
       {path: 'freelance', component: FreelanceMainComponent,
         children: [
           {path: '', component: GigsMainComponent},
