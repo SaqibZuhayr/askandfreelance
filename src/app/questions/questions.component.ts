@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-questions',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor() { }
+  Question;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.post('http://localhost:3000/questions', {}).subscribe((data) => {
+      console.log(data);
+      this.Question = data;
+    });
+
   }
 
 }
