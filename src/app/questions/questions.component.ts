@@ -21,4 +21,8 @@ export class QuestionsComponent implements OnInit {
 
   }
 
+  post_question() {
+    this.route.navigate(['postquestion']);
+  }
+
 }
