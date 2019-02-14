@@ -1,7 +1,13 @@
 .card-body{
   margin-bottom: 5px;
+
 }
 .question{
   margin-left: 5px;
 }
-
+.border-info{
+  padding: 5px;
+}
+.abc{
+margin-top: 5px;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class QuestionsComponent implements OnInit {
 
   Question;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.http.post('http://localhost:3000/questions', {}).subscribe((data) => {
@@ -22,7 +23,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   post_question() {
-    this.route.navigate(['postquestion']);
+    console.log('asdasd');
+    this.router.navigate(['main/postquestion']);
   }
-
 }

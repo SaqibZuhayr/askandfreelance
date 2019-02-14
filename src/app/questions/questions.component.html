@@ -6,13 +6,13 @@
   </div>
   <div class="col-sm-8">
     <div class="card">
-      <div class="row">
+      <div class="row tags">
         <div class="col-sm-11">
-        <button type="button" class="float-right btn btn-primary" (click)="post_question()">Primary</button>
+          <button type="button" class="float-right btn btn-primary " (click)="post_question()">Post Question</button>
+          <h4>Recent Question</h4>
         </div>
       </div>
       <div class="card-body">
-
         <div *ngFor="let q of Question" class="card border-info mb-3">
           <div class="card">
             <div class="row">
@@ -32,8 +32,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
         <!--<div class="card border-info mb-3">-->
         <!--<div class="card">-->
