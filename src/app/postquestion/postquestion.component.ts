@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-postquestion',
@@ -8,9 +10,22 @@ import {Router} from '@angular/router';
 })
 export class PostquestionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router, private http: HttpClient) { }
 
   ngOnInit() {
+  }
+  onPostQuestion(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    console.log('postQuestion');
+    this.http.post('http://localhost:3000/postquestion', {'category':  form.value.title,
+      'question': form.value.question}).subscribe((data) => {
+      console.log(data);
+      this.route.navigate(['main']);
+    });
+
+
   }
 
 
