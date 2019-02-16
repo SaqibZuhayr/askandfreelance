@@ -11,6 +11,8 @@ import {FreelanceMainComponent} from './freelance-main/freelance-main.component'
 import {GigsMainComponent} from './gigs-main/gigs-main.component';
 import {GigsDetailsComponent} from './gigs-details/gigs-details.component';
 import {PostquestionComponent} from './postquestion/postquestion.component';
+import { AccountFreelanceComponent } from './account-freelance/account-freelance.component';
+import { AddGigsComponent } from './add-gigs/add-gigs.component';
 
 const routes: Routes = [
   {path : '', component : LoginComponent},
@@ -24,8 +26,11 @@ const routes: Routes = [
       {path: 'freelance', component: FreelanceMainComponent,
         children: [
           {path: '', component: GigsMainComponent},
-          {path: 'gig_details', component: GigsDetailsComponent}]
-      },
+          {path: 'gig_details', component: GigsDetailsComponent},
+          {path: 'account-freelance', component: AccountFreelanceComponent},
+          {path: 'add-gig', component: AddGigsComponent}]
+      }
+
     ]
 }
 ];

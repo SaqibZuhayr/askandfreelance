@@ -20,6 +20,8 @@ import { SidebarFreelanceComponent } from './sidebar-freelance/sidebar-freelance
 import { GigsMainComponent } from './gigs-main/gigs-main.component';
 import { GigsDetailsComponent } from './gigs-details/gigs-details.component';
 import { PostquestionComponent } from './postquestion/postquestion.component';
+import { AccountFreelanceComponent } from './account-freelance/account-freelance.component';
+import { AddGigsComponent } from './add-gigs/add-gigs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { PostquestionComponent } from './postquestion/postquestion.component';
     SidebarFreelanceComponent,
     GigsMainComponent,
     GigsDetailsComponent,
-    PostquestionComponent
+    PostquestionComponent,
+    AccountFreelanceComponent,
+    AddGigsComponent
   ],
   imports: [
     BrowserModule,

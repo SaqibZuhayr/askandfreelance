@@ -18,7 +18,7 @@ export class AnswercomponentComponent implements OnInit {
       console.log(params.id);
       this.http.post('http://localhost:3000/answers', {'questionID': params.id}).subscribe((data) => {
         console.log(data[0]['answer']);
-        this.answers=data[0];
+        this.answers = data[0];
 
 
       });

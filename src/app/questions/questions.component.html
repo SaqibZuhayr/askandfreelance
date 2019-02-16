@@ -8,29 +8,17 @@
     <div class="card">
       <div class="row tags">
         <div class="col-sm-11">
-          <button type="button" class="float-right btn btn-primary " (click)="post_question()">Post Question</button>
-          <h4>Recent Question</h4>
+        <button type="button" class="float-right btn btn-primary" (click)="post_question()">Primary</button>
+          <h4>Recent Questions</h4>
         </div>
       </div>
       <div class="card-body">
-<<<<<<< HEAD
-        <div *ngFor="let q of Question" class="card border-info mb-3">
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3">
-                <p class="card-text small question">Ahmad1997</p>
-              </div>
-              <div class="col-md-9">
-                <p><a routerLink="answer" class="card-link">{{q.question}}</a></p>
-              </div>
-=======
 
       <div *ngFor="let q of Question" class="card border-info mb-3">
         <div class="card">
           <div class="row">
             <div class="col-md-3">
               <p class="card-text small question">User</p>
->>>>>>> b23984fdcd840755ff826b488c5b100607722e3f
             </div>
             <div class="col-md-9">
               <p><a routerLink="answer/{{q._id}}" class="card-link">{{q.question}}</a></p>
@@ -45,6 +33,8 @@
               <a href="#" class="card-link">{{q.category}}</a>
             </div>
           </div>
+
+
         </div>
         <!--<div class="card border-info mb-3">-->
         <!--<div class="card">-->
@@ -292,6 +282,8 @@
     </div>
 
   </div>
+
+</div>
   <div class="col-sm-2">
     <div class="card">
       <app-trendingtagsquestion></app-trendingtagsquestion>
