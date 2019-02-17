@@ -22,6 +22,8 @@ import { GigsDetailsComponent } from './gigs-details/gigs-details.component';
 import { PostquestionComponent } from './postquestion/postquestion.component';
 import { AccountFreelanceComponent } from './account-freelance/account-freelance.component';
 import { AddGigsComponent } from './add-gigs/add-gigs.component';
+import { JobsSidebarComponent } from './jobs-sidebar/jobs-sidebar.component';
+import { JobsComponent } from './jobs/jobs.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AddGigsComponent } from './add-gigs/add-gigs.component';
     GigsDetailsComponent,
     PostquestionComponent,
     AccountFreelanceComponent,
-    AddGigsComponent
+    AddGigsComponent,
+    JobsSidebarComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,

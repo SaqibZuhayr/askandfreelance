@@ -8,3 +8,10 @@
 .color{
     background-color: #F8F9FA;
 }
+.margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.row{
+    margin-bottom: 5px;
+}

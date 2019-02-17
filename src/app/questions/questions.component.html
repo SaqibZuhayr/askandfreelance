@@ -4,290 +4,292 @@
       <app-sidebar-question></app-sidebar-question>
     </div>
   </div>
-  <div class="col-sm-8">
+  <div class="col-sm-7">
     <div class="card">
       <div class="row tags">
         <div class="col-sm-11">
-        <button type="button" class="float-right btn btn-primary" (click)="post_question()">Primary</button>
+          <button type="button" class="float-right btn btn-primary" (click)="post_question()">Primary</button>
           <h4>Recent Questions</h4>
         </div>
       </div>
       <div class="card-body">
 
-      <div *ngFor="let q of Question" class="card border-info mb-3">
-        <div class="card">
-          <div class="row">
-            <div class="col-md-3">
-              <p class="card-text small question">User</p>
+        <div *ngFor="let q of Question" class="card border-info mb-3">
+          <div class="card">
+            <div class="row">
+              <div class="col-md-3">
+                <p class="card-text small question">User</p>
+              </div>
+              <div class="col-md-9">
+                <p><a routerLink="answer/{{q._id}}" class="card-link">{{q.question}}</a></p>
+              </div>
             </div>
-            <div class="col-md-9">
-              <p><a routerLink="answer/{{q._id}}" class="card-link">{{q.question}}</a></p>
+            <div class="row">
+              <div class="col-sm-9 small question">
+                <p>10views</p>
+              </div>
+              <div class="col-sm-2 small">
+                <a href="#" class="card-link">{{q.category}}</a>
+                <a href="#" class="card-link">{{q.category}}</a>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-9 small question">
-              <p>10views</p>
-            </div>
-            <div class="col-sm-2 small">
-              <a href="#" class="card-link">{{q.category}}</a>
-              <a href="#" class="card-link">{{q.category}}</a>
-            </div>
-          </div>
 
 
+          </div>
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small question">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small question">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small question">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small question">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small question">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div class="card border-info mb-3">-->
+          <!--<div class="card">-->
+          <!--<div class="row">-->
+          <!--<div class="col-md-3">-->
+          <!--<p class="card-text small">AhmedMeo1997</p>-->
+          <!--</div>-->
+          <!--<div class="col-md-9">-->
+          <!--<p><a href="#" class="card-link">What is php?</a></p>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+          <!--<div class="col-sm-9 small question">-->
+          <!--<p>10views</p>-->
+          <!--</div>-->
+          <!--<div class="col-sm-2 small">-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--<a href="#" class="card-link">php</a>-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--</div>-->
+          <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="col-sm-10 question">&ndash;&gt;-->
+          <!--&lt;!&ndash;<p>What is php?</p>&ndash;&gt;-->
+          <!--&lt;!&ndash;<p>10views</p>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="col-sm-2 small">&ndash;&gt;-->
+          <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="col-sm-10 question">&ndash;&gt;-->
+          <!--&lt;!&ndash;<p>What is php?</p>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="col-sm-9 small question">&ndash;&gt;-->
+          <!--&lt;!&ndash;<p>10views</p>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="col-lg-2 small">&ndash;&gt;-->
+          <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
         </div>
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small question">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small question">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small question">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small question">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small question">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--<div class="card border-info mb-3">-->
-        <!--<div class="card">-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-3">-->
-        <!--<p class="card-text small">AhmedMeo1997</p>-->
-        <!--</div>-->
-        <!--<div class="col-md-9">-->
-        <!--<p><a href="#" class="card-link">What is php?</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-sm-9 small question">-->
-        <!--<p>10views</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 small">-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--<a href="#" class="card-link">php</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--</div>-->
-
-
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="col-sm-10 question">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>What is php?</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>10views</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="col-sm-2 small">&ndash;&gt;-->
-        <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
-        <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="col-sm-10 question">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>What is php?</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="col-sm-9 small question">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>10views</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="col-lg-2 small">&ndash;&gt;-->
-        <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
-        <!--&lt;!&ndash;<a href="#" class="card-link">php</a>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
       </div>
-
-    </div>
-
-  </div>
-
-</div>
-  <div class="col-sm-2">
-    <div class="card">
-      <app-trendingtagsquestion></app-trendingtagsquestion>
     </div>
   </div>
-
+  <div class="col-sm-3">
+    <div class="">
+      <div class="card">
+        <app-trendingtagsquestion></app-trendingtagsquestion>
+      </div>
+    </div>
+    <div class="">
+        <div class="card">
+            <app-jobs-sidebar></app-jobs-sidebar>
+        </div>
+      </div>
+  </div>
 </div>
