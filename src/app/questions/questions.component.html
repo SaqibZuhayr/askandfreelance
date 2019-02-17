@@ -8,21 +8,22 @@
     <div class="card">
       <div class="row tags">
         <div class="col-sm-11">
-          <button type="button" class="float-right btn btn-primary" (click)="post_question()">Primary</button>
+
+        <button type="button" class="float-right btn btn-primary" (click)="post_question()">Ask Question</button>
           <h4>Recent Questions</h4>
         </div>
       </div>
       <div class="card-body">
 
-        <div *ngFor="let q of Question" class="card border-info mb-3">
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3">
-                <p class="card-text small question">User</p>
-              </div>
-              <div class="col-md-9">
-                <p><a routerLink="answer/{{q._id}}" class="card-link">{{q.question}}</a></p>
-              </div>
+
+      <div *ngFor="let q of Question" class="card border-info mb-3">
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3">
+              <p class="card-text small question">{{q.user.username}}</p>
+            </div>
+            <div class="col-md-9">
+              <p><a routerLink="answer/{{q.question._id}}" class="card-link">{{q.question.question}}</a></p>
             </div>
             <div class="row">
               <div class="col-sm-9 small question">
@@ -34,6 +35,11 @@
               </div>
             </div>
 
+            <div class="col-sm-2 small">
+              <a href="#" class="card-link">{{q.question.category}}</a>
+              <a href="#" class="card-link">{{q.question.category}}</a>
+            </div>
+          </div>
 
           </div>
           <!--<div class="card border-info mb-3">-->
