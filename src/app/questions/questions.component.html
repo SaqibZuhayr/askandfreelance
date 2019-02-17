@@ -18,10 +18,10 @@
         <div class="card">
           <div class="row">
             <div class="col-md-3">
-              <p class="card-text small question">User</p>
+              <p class="card-text small question">{{q.user.username}}</p>
             </div>
             <div class="col-md-9">
-              <p><a routerLink="answer/{{q._id}}" class="card-link">{{q.question}}</a></p>
+              <p><a routerLink="answer/{{q.question._id}}" class="card-link">{{q.question.question}}</a></p>
             </div>
           </div>
           <div class="row">
@@ -29,8 +29,8 @@
               <p>10views</p>
             </div>
             <div class="col-sm-2 small">
-              <a href="#" class="card-link">{{q.category}}</a>
-              <a href="#" class="card-link">{{q.category}}</a>
+              <a href="#" class="card-link">{{q.question.category}}</a>
+              <a href="#" class="card-link">{{q.question.category}}</a>
             </div>
           </div>
 

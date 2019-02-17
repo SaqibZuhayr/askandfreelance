@@ -63,9 +63,16 @@
 
         <div class="row">
           <div class="col-sm-12">
-            <form>
+            <form class="form-postAnswer" (submit)="onPostAnswer(onPostAnswerF)" #onPostAnswerF="ngForm">
               <div class="form-group">
-                <textarea class="form-control" rows="7" id="comment" placeholder="Enter Answer"></textarea>
+                <textarea class="form-control" rows="7" id="comment" placeholder="Enter Answer" name="answer" autofocus ngModel
+                          #answerinput="ngModel" required></textarea>
+              </div>
+              <div *ngIf="answerinput.invalid && answerinput.dirty && answerinput.touched"
+                   class="alert alert-danger">
+                <div *ngIf="answerinput.errors.required">
+                  Answer is required.
+                </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
