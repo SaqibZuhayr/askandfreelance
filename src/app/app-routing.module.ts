@@ -13,6 +13,7 @@ import {GigsDetailsComponent} from './gigs-details/gigs-details.component';
 import {PostquestionComponent} from './postquestion/postquestion.component';
 import { AccountFreelanceComponent } from './account-freelance/account-freelance.component';
 import { AddGigsComponent } from './add-gigs/add-gigs.component';
+import {JobsComponent} from './jobs/jobs.component';
 
 const routes: Routes = [
   {path : '', component : LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
       {path: '', component: QuestionsComponent},
       {path: 'answer/:id', component: AnswercomponentComponent},
       {path: 'postquestion', component: PostquestionComponent},
+      {path: 'jobs', component: JobsComponent},
       {path: 'freelance', component: FreelanceMainComponent,
         children: [
           {path: '', component: GigsMainComponent},
