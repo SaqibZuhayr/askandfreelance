@@ -1,0 +1,157 @@
+<div class="row">
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="list-group">
+        <h6 class="list-group-item">Jobs Categories</h6>
+        <a href="#" class="list-group-item">CS</a>
+        <a href="#" class="list-group-item">IT</a>
+        <a href="#" class="list-group-item">python</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="card col-sm-12">
+      <form class="form-signin" (submit)="onPostQuestion(onPostQuestionF)" #onPostQuestionF="ngForm">
+        <div class="form-group balance">
+          <input class="form-control" id="title" placeholder="Enter Job Title" name="title" autofocus ngModel
+                 #titleinput="ngModel" required>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div *ngIf="titleinput.invalid && titleinput.dirty && titleinput.touched" class="alert alert-danger">
+          <div *ngIf="titleinput.errors.required">
+            Title is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="job_description" placeholder="Enter Job Description"
+                    name="job_description" autofocus ngModel #questioninput="ngModel" required></textarea>
+        </div>
+        <div *ngIf="job_description.invalid && job_description.dirty && job_description.touched"
+             class="alert alert-danger">
+          <div *ngIf="job_description.errors.required">
+            Question is required.
+          </div>
+        </div>
+        <div class="form-group balance">
+          <input class="form-control" id="skills" placeholder="What skills are required for this job?  e.g CSS,PHP,MATLAB" name="skills" autofocus ngModel
+                 #titleinput="ngModel" required>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div class="form-group balance">
+          <input class="form-control" id="job_location" placeholder="Enter Job Location" name="job_location" autofocus
+                 ngModel #titleinput="ngModel" required>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div *ngIf="job_location.invalid && job_location.dirty && job_location.touched" class="alert alert-danger">
+          <div *ngIf="job_location.errors.required">
+            Title is required.
+          </div>
+        </div>
+        <!--<div class="form-group balance">-->
+        <!--<input class="form-control" id="job_location" placeholder="Enter Job Location" name="job_location" autofocus-->
+        <!--ngModel #titleinput="ngModel" required>-->
+        <!--&lt;!&ndash;<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>&ndash;&gt;-->
+        <!--</div>-->
+        <!--<div *ngIf="job_location.invalid && job_location.dirty && job_location.touched" class="alert alert-danger">-->
+        <!--<div *ngIf="job_location.errors.required">-->
+        <!--Title is required.-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+        <div class="row">
+          <div class="col-sm-6">
+
+
+            <div class="form-group balance">
+              <input class="form-control" id="salary_min" placeholder="Enter Minimum Salary" name="salary_min" autofocus
+                     ngModel
+                     #titleinput="ngModel" required>
+              <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group balance">
+              <input class="form-control" id="salary_max" placeholder="Enter Maximum Salary" name="salary_max"
+                     autofocus ngModel
+                     #titleinput="ngModel" required>
+              <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdowncareer"
+                      data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                Choose career level
+              </button>
+              <div class="dropdown-menu" aria-labelledby="Choose career level">
+                <a class="dropdown-item">Intern/Student</a>
+                <a class="dropdown-item">Entry Level</a>
+                <a class="dropdown-item">Experienced Professional</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdowndegree"
+                      data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                Choose degree level
+              </button>
+              <div class="dropdown-menu" aria-labelledby="Choose degree level">
+                <a class="dropdown-item">Non-Matriculation</a>
+                <a class="dropdown-item">Matriculation/O-Level</a>
+                <a class="dropdown-item">Intermediate/A-Level</a>
+                <a class="dropdown-item">Diploma</a>
+                <a class="dropdown-item">Bachelor</a>
+                <a class="dropdown-item">Master</a>
+                <a class="dropdown-item">PHD/Doctorate</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownexperience"
+                      data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                Choose experience level
+              </button>
+              <div class="dropdown-menu" aria-labelledby="Choose degree level">
+                <a class="dropdown-item">Fresh</a>
+                <a class="dropdown-item">Less than 1 Year</a>
+                <a class="dropdown-item">1 Year</a>
+                <a class="dropdown-item">2 Year</a>
+                <a class="dropdown-item">3 Year</a>
+                <a class="dropdown-item">4 Year</a>
+                <a class="dropdown-item">5 Year</a>
+                <a class="dropdown-item">6 Year</a>
+                <a class="dropdown-item">7 Year</a>
+                <a class="dropdown-item">8 Year</a>
+                <a class="dropdown-item">9 Year</a>
+                <a class="dropdown-item">10 Year</a>
+                <a class="dropdown-item">More than 10 years</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="list-group">
+        <h6 class="list-group-item">Trending Jobs</h6>
+        <a href="#" class="list-group-item">CS</a>
+        <a href="#" class="list-group-item">IT</a>
+        <a href="#" class="list-group-item">python</a>
+      </div>
+    </div>
+  </div>
