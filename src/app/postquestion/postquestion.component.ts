@@ -11,16 +11,18 @@ import {HttpClient} from '@angular/common/http';
 export class PostquestionComponent implements OnInit {
 
   constructor(private route: Router, private http: HttpClient) { }
-
+  userid = '';
   ngOnInit() {
+    this.userid = localStorage.getItem('userid');
   }
+
   onPostQuestion(form: NgForm) {
     if (form.invalid) {
       return;
     }
     console.log('postQuestion');
     this.http.post('http://localhost:3000/postquestion', {'category':  form.value.title,
-      'question': form.value.question}).subscribe((data) => {
+      'question': form.value.question, 'userid': this.userid}).subscribe((data) => {
       console.log(data);
       this.route.navigate(['main']);
     });

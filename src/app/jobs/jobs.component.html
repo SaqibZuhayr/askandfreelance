@@ -18,43 +18,19 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="card border-info mb-3">
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3">
-                <p class="card-text small question">&nbsp;User</p>
-              </div>
-              <div class="col-md-9">
-                <p><a class="card-link">Senior Software Engineer</a></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-11">
-                <p>&nbsp;Senior software engineer required for a big firm. My name is Goku and i am not a terrorist.</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-10"></div>
-              <div class="col-sm-2 btn-margin">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="card border-info mb-3 ">
+        <div *ngFor="let j of jobs" class="card border-info mb-3 ">
           <div class="card ">
             <div class="row">
               <div class="col-md-3">
-                <p class="card-text small question">&nbsp;User</p>
+                <p class="card-text small question">{{j.category}}</p>
               </div>
               <div class="col-md-9">
-                <p><a class="card-link">Senior Software Engineer</a></p>
+                <p><a class="card-link">{{j.title}}</a></p>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-11">
-                <p>&nbsp;Senior software engineer required for a big firm. My name is Goku and i am not a terrorist.</p>
+                <p>&nbsp;{{j.details}}</p>
               </div>
             </div>
             <div class="row">
