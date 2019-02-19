@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
      return;
    }
 
-    this.http.post("http://localhost:3000/user", {'first_name':  form.value.firstext,
+    this.http.post('http://localhost:3000/user', {'first_name':  form.value.firstext,
         'last_name': form.value.lasttext,
         'email':   form.value.emailtext,
         'username' : form.value.usertext,

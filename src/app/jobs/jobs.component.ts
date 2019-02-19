@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-jobs',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: Router, private http: HttpClient) { }
+  jobs =[];
   ngOnInit() {
+    this.http.post('http://localhost:3000/viewjobs', {}).subscribe((data) => {
+      console.log(data);
+      // @ts-ignore
+      this.jobs = data;
+
+    });
   }
 
 }

@@ -4,6 +4,8 @@ import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {main} from '@angular/compiler-cli/src/main';
 
+import {UserService} from '../services/user.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +13,7 @@ import {main} from '@angular/compiler-cli/src/main';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router, private http: HttpClient) {
+  constructor(private route: Router, private user: UserService) {
   }
 
   ngOnInit() {
@@ -23,13 +25,12 @@ export class LoginComponent implements OnInit {
       return;
     }
     console.log('abc');
-    this.http.post('http://localhost:3000/user/auth', {
-      'email': form.value.emailtext,
-      'password': form.value.passtext,
-    }).subscribe((data) => {
+    this.user.login(form).subscribe((data) => {
       console.log(data);
       if (data[0]['_id']) {
-          this.route.navigate(['main']);
+        localStorage.setItem('userid', data[0]['_id']);
+        localStorage.setItem('username', data[0]['username']);
+        this.route.navigate(['main']);
         // return;
       } else {
         alert('wrong credentails');
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
 
       }
     });
+
 
   }
 }
