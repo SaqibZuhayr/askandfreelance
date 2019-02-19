@@ -24,6 +24,7 @@ import { AccountFreelanceComponent } from './account-freelance/account-freelance
 import { AddGigsComponent } from './add-gigs/add-gigs.component';
 import { JobsSidebarComponent } from './jobs-sidebar/jobs-sidebar.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { PostJobComponent } from './post-job/post-job.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { JobsComponent } from './jobs/jobs.component';
     AccountFreelanceComponent,
     AddGigsComponent,
     JobsSidebarComponent,
-    JobsComponent
+    JobsComponent,
+    PostJobComponent
   ],
   imports: [
     BrowserModule,
