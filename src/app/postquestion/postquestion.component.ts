@@ -21,6 +21,7 @@ export class PostquestionComponent implements OnInit {
       return;
     }
     console.log('postQuestion');
+    console.log(this.userid);
     this.http.post('http://localhost:3000/postquestion', {'category':  form.value.title,
       'question': form.value.question, 'userid': this.userid}).subscribe((data) => {
       console.log(data);
