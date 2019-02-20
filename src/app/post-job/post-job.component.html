@@ -11,7 +11,27 @@
   </div>
   <div class="col-sm-7">
     <div class="card col-sm-12">
-      <form class="form-signin" (submit)="onPostQuestion(onPostQuestionF)" #onPostQuestionF="ngForm">
+      <form class="form-signin" (submit)="onPostJob(onPostJobF)" #onPostJobF="ngForm">
+        <div class="form-group balance">
+          <input class="form-control" id="org" placeholder="Enter Organization name" name="organization" autofocus ngModel
+                 #orginput="ngModel" required>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div *ngIf="orginput.invalid && orginput.dirty && orginput.touched" class="alert alert-danger">
+          <div *ngIf="orginput.errors.required">
+            Organization name is required.
+          </div>
+        </div>
+        <div class="form-group balance">
+          <input class="form-control" id="category" placeholder="Enter Job Category" name="category" autofocus ngModel
+                 #categoryinput="ngModel" required>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div *ngIf="categoryinput.invalid && categoryinput.dirty && categoryinput.touched" class="alert alert-danger">
+          <div *ngIf="categoryinput.errors.required">
+            Category is required.
+          </div>
+        </div>
         <div class="form-group balance">
           <input class="form-control" id="title" placeholder="Enter Job Title" name="title" autofocus ngModel
                  #titleinput="ngModel" required>
@@ -24,27 +44,39 @@
         </div>
         <div class="form-group">
           <textarea class="form-control" rows="5" id="job_description" placeholder="Enter Job Description"
-                    name="job_description" autofocus ngModel #questioninput="ngModel" required></textarea>
+                    name="details" autofocus ngModel #jobDescinput="ngModel" required></textarea>
         </div>
-        <div *ngIf="job_description.invalid && job_description.dirty && job_description.touched"
+        <div *ngIf="jobDescinput.invalid && jobDescinput.dirty && jobDescinput.touched"
              class="alert alert-danger">
           <div *ngIf="job_description.errors.required">
-            Question is required.
+            Description is required.
           </div>
         </div>
         <div class="form-group balance">
-          <input class="form-control" id="skills" placeholder="What skills are required for this job?  e.g CSS,PHP,MATLAB" name="skills" autofocus ngModel
-                 #titleinput="ngModel" required>
+          <input class="form-control" id="skills"
+                 placeholder="What skills are required for this job?  e.g CSS,PHP,MATLAB" name="skills" autofocus
+                 ngModel
+                 #skillsinput="ngModel" required>
           <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
         </div>
         <div class="form-group balance">
-          <input class="form-control" id="job_location" placeholder="Enter Job Location" name="job_location" autofocus
-                 ngModel #titleinput="ngModel" required>
+          <input class="form-control" id="job_location" placeholder="Enter Job Location" name="location" autofocus
+                 ngModel #jobLocinput="ngModel" required>
           <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
         </div>
-        <div *ngIf="job_location.invalid && job_location.dirty && job_location.touched" class="alert alert-danger">
-          <div *ngIf="job_location.errors.required">
+        <div *ngIf="jobLocinput.invalid && jobLocinput.dirty && jobLocinput.touched" class="alert alert-danger">
+          <div *ngIf="jobLocinput.errors.required">
             Title is required.
+          </div>
+        </div>
+        <div class="form-group balance">
+          <input class="form-control" id="lastdate" placeholder="Last Date to apply" name="lastDate" autofocus
+                 ngModel #lastdateinput="ngModel" required>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div *ngIf="lastdateinput.invalid && lastdateinput.dirty && lastdateinput.touched" class="alert alert-danger">
+          <div *ngIf="lastdateinput.errors.required">
+            Last Date is required.
           </div>
         </div>
         <!--<div class="form-group balance">-->
@@ -64,7 +96,7 @@
 
 
             <div class="form-group balance">
-              <input class="form-control" id="salary_min" placeholder="Enter Minimum Salary" name="salary_min" autofocus
+              <input class="form-control" id="salary_min" placeholder="Enter Minimum Salary" name="minSalary" autofocus
                      ngModel
                      #titleinput="ngModel" required>
               <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
@@ -72,7 +104,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group balance">
-              <input class="form-control" id="salary_max" placeholder="Enter Maximum Salary" name="salary_max"
+              <input class="form-control" id="salary_max" placeholder="Enter Maximum Salary" name="maxSalary"
                      autofocus ngModel
                      #titleinput="ngModel" required>
               <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
@@ -81,64 +113,61 @@
         </div>
         <div class="row">
           <div class="col-sm-3">
+            <div class="form-group">
+              <label for="career"></label>
+              <select name="careerLevel" id="career" [(ngModel)]="career">
+                <option value="0">Choose career level</option>
+                <option value="Inter/Student">Intern/Student</option>
+                <option value="Entry Level">Entry Level</option>
+                <option value="Experienced Professional">Experienced Professional</option>
 
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdowncareer"
-                      data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                Choose career level
-              </button>
-              <div class="dropdown-menu" aria-labelledby="Choose career level">
-                <a class="dropdown-item">Intern/Student</a>
-                <a class="dropdown-item">Entry Level</a>
-                <a class="dropdown-item">Experienced Professional</a>
-              </div>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="degree"></label>
+              <select name="degreeLevel" id="degree" [(ngModel)]="degree">
+
+                <option value="0">Choose degree level</option>
+                <option value="Non-Matriculation">Non-Matriculation</option>
+                <option value="Matriculation/O-Level">Matriculation/O-Level</option>
+                <option value="Intermediate/A-Level">Intermediate/A-Level</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Master">Master</option>
+                <option value="PHD/Doctorate">PHD/Doctorate</option>
+              </select>
+
             </div>
           </div>
 
           <div class="col-sm-3">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdowndegree"
-                      data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                Choose degree level
-              </button>
-              <div class="dropdown-menu" aria-labelledby="Choose degree level">
-                <a class="dropdown-item">Non-Matriculation</a>
-                <a class="dropdown-item">Matriculation/O-Level</a>
-                <a class="dropdown-item">Intermediate/A-Level</a>
-                <a class="dropdown-item">Diploma</a>
-                <a class="dropdown-item">Bachelor</a>
-                <a class="dropdown-item">Master</a>
-                <a class="dropdown-item">PHD/Doctorate</a>
-              </div>
+            <div class="form-group">
+              <label for="experience"></label>
+              <select name="experience" id="experience" [(ngModel)]="experience">
+
+                <option value="0">Choose experience level</option>
+                <option value="Fresh">Fresh</option>
+                <option value="1 year">1 Year</option>
+                <option value="2 year">2 Year</option>
+                <option value="3 year">3 Year</option>
+                <option value="4 year">4 Year</option>
+                <option value="5 year">5 Year</option>
+                <option value="6 year">6 Year</option>
+                <option value="7 year">7 Year</option>
+                <option value="8 year">8 Year</option>
+                <option value="9 year">9 Year</option>
+                <option value="10 year">10 Year</option>
+                <option value="More than 10 years">More than 10 Years</option>
+
+              </select>
+
             </div>
           </div>
 
-          <div class="col-sm-3">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownexperience"
-                      data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                Choose experience level
-              </button>
-              <div class="dropdown-menu" aria-labelledby="Choose degree level">
-                <a class="dropdown-item">Fresh</a>
-                <a class="dropdown-item">Less than 1 Year</a>
-                <a class="dropdown-item">1 Year</a>
-                <a class="dropdown-item">2 Year</a>
-                <a class="dropdown-item">3 Year</a>
-                <a class="dropdown-item">4 Year</a>
-                <a class="dropdown-item">5 Year</a>
-                <a class="dropdown-item">6 Year</a>
-                <a class="dropdown-item">7 Year</a>
-                <a class="dropdown-item">8 Year</a>
-                <a class="dropdown-item">9 Year</a>
-                <a class="dropdown-item">10 Year</a>
-                <a class="dropdown-item">More than 10 years</a>
-              </div>
-            </div>
-          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
