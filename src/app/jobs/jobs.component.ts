@@ -20,6 +20,7 @@ export class JobsComponent implements OnInit {
     });
   }
 
+
   post_job() {
     this.route.navigate(['main/jobs/post-job']);
   }
