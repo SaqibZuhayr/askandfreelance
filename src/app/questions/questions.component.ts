@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    localStorage.setItem('component', 'q/a');
     this.http.post('http://localhost:3000/questions', {}).subscribe((data) => {
       console.log(data);
       this.Question = data;

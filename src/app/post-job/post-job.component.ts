@@ -18,6 +18,9 @@ export class PostJobComponent implements OnInit {
     this.userid = localStorage.getItem('userid');
   }
   onPostJob(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
     this.http.post('http://localhost:3000/postjobs', {'job':  form.value, 'userid': this.userid })
       .subscribe((data) => {
       console.log(data);

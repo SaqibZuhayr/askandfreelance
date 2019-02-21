@@ -15,6 +15,7 @@ import { AccountFreelanceComponent } from './account-freelance/account-freelance
 import { AddGigsComponent } from './add-gigs/add-gigs.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { PostJobComponent } from './post-job/post-job.component';
+import {JobDetailsComponent} from './job-details/job-details.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -26,10 +27,11 @@ const routes: Routes = [
       { path: 'answer/:id', component: AnswercomponentComponent },
       { path: 'postquestion', component: PostquestionComponent },
       {
-        path: 'jobs', 
+        path: 'jobs',
         children: [
           { path: '', component: JobsComponent },
-          { path: 'post-job', component: PostJobComponent }        
+          { path: 'post-job', component: PostJobComponent },
+          { path: 'job-details/:id', component: JobDetailsComponent }
         ]
       },
       {

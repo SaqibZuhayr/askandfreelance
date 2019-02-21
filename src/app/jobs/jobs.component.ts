@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class JobsComponent implements OnInit {
 
   constructor(private route: Router, private http: HttpClient) { }
-  jobs =[];
+  jobs = [];
   ngOnInit() {
     this.http.post('http://localhost:3000/viewjobs', {}).subscribe((data) => {
       console.log(data);
@@ -20,8 +20,13 @@ export class JobsComponent implements OnInit {
     });
   }
 
-  post_job(){
+
+  post_job() {
     this.route.navigate(['main/jobs/post-job']);
+  }
+
+  view_details() {
+    this.route.navigate(['main/jobs/job-details']);
   }
 
 }
