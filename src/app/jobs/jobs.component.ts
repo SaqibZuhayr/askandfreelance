@@ -25,4 +25,8 @@ export class JobsComponent implements OnInit {
     this.route.navigate(['main/jobs/post-job']);
   }
 
+  view_details(){
+    this.route.navigate(['main/jobs/job-details']);
+  }
+
 }
