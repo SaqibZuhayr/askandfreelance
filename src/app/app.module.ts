@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import {FormsModule} from '@angular/forms';
+import {FormGroup, FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserMainComponent } from './user-main/user-main.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -55,6 +55,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

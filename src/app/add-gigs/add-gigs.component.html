@@ -1,14 +1,65 @@
 <div class="row">
   <div class="card col-sm-12">
-    <form>
+    <form [formGroup]="nform">
+      <div>
+        <button type="button" (click)="filepicker.click()" >Add Image</button>
+        <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;">
+      </div>
+      <div  *ngIf="imagePreview !== '' && imagePreview && nform.get('image').valid">
+        <img [src]="imagePreview" [alt]="nform.value.title">
+      </div>
+    </form>
+    <form class="form-signin" (submit)="onAddGig(onAddGigF)" #onAddGigF="ngForm">
       <div class="form-group balance">
-        <input class="form-control" id="title" placeholder="">
+        <input class="form-control" id="gig_title" placeholder="Enter Gig Title" name="gig_title" autofocus ngModel
+               #gig_title="ngModel" required>
         <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
       </div>
-      <div class="form-group">
-        <textarea class="form-control" rows="5" id="comment" placeholder="Enter Question"></textarea>
+      <div *ngIf="gig_title.invalid && gig_title.dirty && gig_title.touched" class="alert alert-danger">
+        <div *ngIf="gig_title.errors.required">
+          Gig title is required.
+        </div>
       </div>
+      <div class="form-group">
+          <textarea class="form-control" rows="5" id="gig_description" placeholder="Enter Gig Description"
+                    name="gig_description" autofocus ngModel #gig_description="ngModel" required></textarea>
+      </div>
+      <div *ngIf="gig_description.invalid && gig_description.dirty && gig_description.touched"
+           class="alert alert-danger">
+        <div *ngIf="gig_description.errors.required">
+          Gig Description is required.
+        </div>
+      </div>
+      <div class="form-group balance">
+        <div class="row">
+          <div class="col-sm-7">
+            <input class="form-control" id="gig_photo" placeholder="Select Gig Photo" name="gig_photo" autofocus ngModel
+                   #gig_photo="ngModel" required>
+          </div>
+          <div class="col-sm-3">
+            <button type="button" class="float-right btn btn-primary" (click)="selectgigimage()">Choose Image</button>
+          </div>
+          <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+      </div>
+      <div *ngIf="gig_photo.invalid && gig_photo.dirty && gig_photo.touched" class="alert alert-danger">
+        <div *ngIf="gig_photo.errors.required">
+          Gig photo is required.
+        </div>
+      </div>
+      <div class="form-group balance">
+        <input class="form-control" id="gig_rate" placeholder="Enter Gig Rate" name="gig_rate" autofocus ngModel
+               #gig_rate="ngModel" required>
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+      </div>
+      <div *ngIf="gig_rate.invalid && gig_rate.dirty && gig_rate.touched" class="alert alert-danger">
+        <div *ngIf="gig_rate.errors.required">
+          Gig Rate is required.
+        </div>
+      </div>
+
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
+
 </div>
