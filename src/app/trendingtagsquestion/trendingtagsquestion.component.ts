@@ -18,7 +18,7 @@ export class TrendingtagsquestionComponent implements OnInit {
     });
   }
 
-  searchTag(tag){
+  searchTag(tag) {
     this.question.getQuestions(tag);
   }
 }

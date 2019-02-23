@@ -12,8 +12,13 @@
   <div class="col-sm-7">
     <div class="card col-sm-12">
       <form class="form-signin" (submit)="onPostJob(onPostJobF)" #onPostJobF="ngForm">
+        <button type="button" class="float-right btn btn-primary" (click)="onBack()">Back</button>
+      <br>
+      <h5>Post Job</h5>
+      <hr>
         <div class="form-group balance">
-          <input class="form-control" id="org" placeholder="Enter Organization name" name="organization" autofocus ngModel
+          <input class="form-control" id="org" placeholder="Enter Organization name" name="organization" autofocus
+                 ngModel
                  #orginput="ngModel" required>
           <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
         </div>
@@ -112,10 +117,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="form-group">
               <label for="career"></label>
-              <select name="careerLevel" id="career" [(ngModel)]="career">
+              <select class="form-control" name="careerLevel" id="career" [(ngModel)]="career">
                 <option value="0">Choose career level</option>
                 <option value="Inter/Student">Intern/Student</option>
                 <option value="Entry Level">Entry Level</option>
@@ -126,10 +131,10 @@
 
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="form-group">
               <label for="degree"></label>
-              <select name="degreeLevel" id="degree" [(ngModel)]="degree">
+              <select class="form-control" name="degreeLevel" id="degree" [(ngModel)]="degree">
 
                 <option value="0">Choose degree level</option>
                 <option value="Non-Matriculation">Non-Matriculation</option>
@@ -144,10 +149,10 @@
             </div>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="form-group">
               <label for="experience"></label>
-              <select name="experience" id="experience" [(ngModel)]="experience">
+              <select class="form-control" name="experience" id="experience" [(ngModel)]="experience">
 
                 <option value="0">Choose experience level</option>
                 <option value="Fresh">Fresh</option>
@@ -184,3 +189,4 @@
       </div>
     </div>
   </div>
+</div>

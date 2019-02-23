@@ -1,6 +1,8 @@
 <div class="row">
   <div class="card col-sm-11">
     <form class="form" (submit)="onAddGig(onAddGigF)" #onAddGigF="ngForm">
+      <button type="button" class="float-right btn btn-primary" (click)="onBack()">Back</button>
+      <br>
       <h5>Add New Gig</h5>
       <hr>
       <div class="form-group balance">
@@ -56,7 +58,6 @@
           Gig Rate is required.
         </div>
       </div>
-
       <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
