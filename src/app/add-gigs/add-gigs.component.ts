@@ -11,7 +11,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AddGigsComponent implements OnInit {
 nform: FormGroup;
-  imagePreview = '';
+  imagePreview ;
   constructor(public route: ActivatedRoute, private http: HttpClient) { }
   ngOnInit() {
     this.nform = new FormGroup({
@@ -24,7 +24,8 @@ nform: FormGroup;
     console.log(form.value);
     console.log(this.nform.value.image);
     this.http.post('http://localhost:3000/addgig', {'gig': form.value,
-      'image': this.nform.value.image
+      'image': this.imagePreview,
+      'userid': localStorage.getItem('userid')
       })
       .subscribe((data) => {
       console.log(data);
@@ -33,7 +34,7 @@ nform: FormGroup;
 
 
   onImagePicked(event: Event) {
-    const file = (event.target as HTMLInputElement).files[0];
+    const file = (event.target as HTMLInputElement).files[0];;
     this.nform.patchValue({ image: file});
     this.nform.get('image').updateValueAndValidity();
     const reader = new FileReader();

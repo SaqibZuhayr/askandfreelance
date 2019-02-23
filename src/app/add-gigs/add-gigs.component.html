@@ -32,7 +32,7 @@
           <form [formGroup]="nform">
             <div>
               <button type="button" class="btn btn-primary" (click)="filepicker.click()">Add Image</button>
-              <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;">
+              <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;" accept="image/*">
             </div>
             <div *ngIf="imagePreview !== '' && imagePreview && nform.get('image').valid">
               <img [src]="imagePreview" [alt]="nform.value.title">
