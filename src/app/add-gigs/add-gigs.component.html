@@ -1,15 +1,8 @@
 <div class="row">
-  <div class="card col-sm-12">
-    <form [formGroup]="nform">
-      <div>
-        <button type="button" (click)="filepicker.click()" >Add Image</button>
-        <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;">
-      </div>
-      <div  *ngIf="imagePreview !== '' && imagePreview && nform.get('image').valid">
-        <img [src]="imagePreview" [alt]="nform.value.title">
-      </div>
-    </form>
-    <form class="form-signin" (submit)="onAddGig(onAddGigF)" #onAddGigF="ngForm">
+  <div class="card col-sm-11">
+    <form class="form" (submit)="onAddGig(onAddGigF)" #onAddGigF="ngForm">
+      <h5>Add New Gig</h5>
+      <hr>
       <div class="form-group balance">
         <input class="form-control" id="gig_title" placeholder="Enter Gig Title" name="gig_title" autofocus ngModel
                #gig_title="ngModel" required>
@@ -36,9 +29,15 @@
             <input class="form-control" id="gig_photo" placeholder="Select Gig Photo" name="gig_photo" autofocus ngModel
                    #gig_photo="ngModel" required>
           </div>
-          <div class="col-sm-3">
-            <button type="button" class="float-right btn btn-primary" (click)="selectgigimage()">Choose Image</button>
-          </div>
+          <form [formGroup]="nform">
+            <div>
+              <button type="button" class="btn btn-primary" (click)="filepicker.click()">Add Image</button>
+              <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;">
+            </div>
+            <div *ngIf="imagePreview !== '' && imagePreview && nform.get('image').valid">
+              <img [src]="imagePreview" [alt]="nform.value.title">
+            </div>
+          </form>
           <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
         </div>
       </div>
@@ -59,6 +58,7 @@
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
   </div>
 

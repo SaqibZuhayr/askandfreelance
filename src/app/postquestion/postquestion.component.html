@@ -7,6 +7,7 @@
   <div class="col-sm-8">
     <div class="card col-sm-12">
       <form class="form-signin" (submit)="onPostQuestion(onPostQuestionF)" #onPostQuestionF="ngForm">
+        <h5>Ask Question</h5>
         <div class="form-group balance">
           <input class="form-control" id="title" placeholder="Enter Title" name="title" autofocus ngModel
                  #titleinput="ngModel" required>
@@ -28,7 +29,8 @@
             Question is required.
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+        <button type="submit" class="float-right btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
