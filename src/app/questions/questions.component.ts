@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
+import { QuestionService } from '../services/question.service';
+
 
 @Component({
   selector: 'app-questions',
@@ -12,13 +14,13 @@ export class QuestionsComponent implements OnInit {
 
   Question;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private question: QuestionService) { }
 
   ngOnInit() {
     localStorage.setItem('component', 'q/a');
-    this.http.post('http://localhost:3000/questions', {}).subscribe((data) => {
-      console.log(data);
-      this.Question = data;
+    this.question.getQuestions(undefined);
+    this.question.questionObservable.subscribe(value => {
+      this.Question = value;
     });
 
   }
