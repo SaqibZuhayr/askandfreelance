@@ -38,7 +38,6 @@ nform: FormGroup;
     this.nform.get('image').updateValueAndValidity();
     const reader = new FileReader();
     reader.onload = () => {
-      console.log(typeof this.imagePreview, typeof reader.result);
       // @ts-ignore
       this.imagePreview = reader.result;
     };
