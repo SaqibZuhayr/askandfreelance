@@ -15,8 +15,10 @@ export class AnswercomponentComponent implements OnInit {
   questionID: string;
   answers = [];
   userid = ' ';
+  username = ' ';
   ngOnInit() {
     this.userid = localStorage.getItem('userid');
+    this.username = localStorage.getItem('username');
     this.fetchAnswer();
   }
   onPostAnswer(form: NgForm) {
@@ -31,7 +33,8 @@ export class AnswercomponentComponent implements OnInit {
     this.http.post('http://localhost:3000/postanswer', {
       'answer':  form.value.answer,
       'questionID': this.answers['_id'],
-      'userid': this.userid})
+      'userid': this.userid,
+      'answeredBy': this.username})
       .subscribe((data) => {
       console.log(data);
       this.fetchAnswer();

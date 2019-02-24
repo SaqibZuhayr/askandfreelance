@@ -14,16 +14,18 @@ export class PostquestionComponent implements OnInit {
   }
 
   userid = '';
+  username = '';
 
   ngOnInit() {
     this.userid = localStorage.getItem('userid');
+    this.username = localStorage.getItem('username');
   }
 
   onPostQuestion(form: NgForm) {
     if (form.invalid) {
       return;
     }
-    if (!localStorage.getItem('userid')){
+    if (!localStorage.getItem('userid')) {
       alert('LOGIN REQUIRED');
       return;
     }
@@ -31,7 +33,7 @@ export class PostquestionComponent implements OnInit {
     console.log(this.userid);
     this.http.post('http://localhost:3000/postquestion', {
       'category': form.value.title,
-      'question': form.value.question, 'userid': this.userid
+      'question': form.value.question, 'userid': this.userid, 'askedBy': this.username
     }).subscribe((data) => {
       console.log(data);
       this.route.navigate(['main']);
