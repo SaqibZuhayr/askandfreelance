@@ -10,6 +10,7 @@ export class FreelanceMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

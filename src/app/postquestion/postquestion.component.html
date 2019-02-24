@@ -6,15 +6,31 @@
   </div>
   <div class="col-sm-8">
     <div class="card col-sm-12">
-      <form>
+      <form class="form-signin" (submit)="onPostQuestion(onPostQuestionF)" #onPostQuestionF="ngForm">
+        <h5>Ask Question</h5>
         <div class="form-group balance">
-          <input class="form-control" id="title" placeholder="Enter Title">
+          <input class="form-control" id="title" placeholder="Enter Title" name="title" autofocus ngModel
+                 #titleinput="ngModel" required>
           <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
         </div>
-        <div class="form-group">
-          <textarea class="form-control" rows="5" id="comment" placeholder="Enter Question"></textarea>
+        <div *ngIf="titleinput.invalid && titleinput.dirty && titleinput.touched"
+             class="alert alert-danger">
+          <div *ngIf="titleinput.errors.required">
+            Title is required.
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="comment" placeholder="Enter Question" name="question" autofocus ngModel
+                    #questioninput="ngModel" required></textarea>
+        </div>
+        <div *ngIf="questioninput.invalid && questioninput.dirty && questioninput.touched"
+             class="alert alert-danger">
+          <div *ngIf="questioninput.errors.required">
+            Question is required.
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+        <button type="submit" class="float-right btn btn-primary">Submit</button>
       </form>
     </div>
   </div>

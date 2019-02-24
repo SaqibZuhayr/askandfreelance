@@ -1,0 +1,24 @@
+.card{
+    margin-right:2%;
+    margin-bottom: 10px;
+  }
+.gigs-det{
+    padding: 5px;
+}
+.color{
+    background-color: #F8F9FA;
+}
+.margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.row{
+    margin-bottom: 5px;
+}
+.gig-card{
+  margin-top: 10px;
+  margin-left: 6.25%;
+}
+.btn-primary{
+  margin-top: 15px;
+}

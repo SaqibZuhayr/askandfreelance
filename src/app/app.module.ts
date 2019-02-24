@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import {FormsModule} from '@angular/forms';
+import {FormGroup, FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserMainComponent } from './user-main/user-main.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -24,6 +24,10 @@ import { AccountFreelanceComponent } from './account-freelance/account-freelance
 import { AddGigsComponent } from './add-gigs/add-gigs.component';
 import { JobsSidebarComponent } from './jobs-sidebar/jobs-sidebar.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { PostJobComponent } from './post-job/post-job.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
+import { UserProfileDetailsComponent } from './user-profile-details/user-profile-details.component';
+import { QuestionmainComponent } from './questionmain/questionmain.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +49,17 @@ import { JobsComponent } from './jobs/jobs.component';
     AccountFreelanceComponent,
     AddGigsComponent,
     JobsSidebarComponent,
-    JobsComponent
+    JobsComponent,
+    PostJobComponent,
+    JobDetailsComponent,
+    UserProfileDetailsComponent,
+    QuestionmainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

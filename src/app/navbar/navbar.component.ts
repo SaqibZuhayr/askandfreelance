@@ -17,18 +17,16 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router, private location: Location) {
   }
-
   ngOnInit() {
     if (localStorage.getItem('userid') != null) {
       this.loggedIn = true;
       this.user = {
-        'userid': localStorage.getItem('userid'),
-        'username': localStorage.getItem('username')
+        'userid' : localStorage.getItem('userid'),
+        'username' : localStorage.getItem('username')
       };
     }
 
   }
-
   signout() {
     this.loggedIn = false;
     localStorage.clear();
@@ -45,7 +43,6 @@ export class NavbarComponent implements OnInit {
       console.log(location.pathname + '  else');
       // question component
     }
-
   }
 
 }
