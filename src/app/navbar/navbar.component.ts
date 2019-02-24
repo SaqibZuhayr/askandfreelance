@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Location} from '@angular/common';
+import {QuestionService} from '../services/question.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +17,7 @@ export class NavbarComponent implements OnInit {
   loggedIn = false;
   current = '/main/freelance';
 
-  constructor(private router: Router, private location: Location) {
+  constructor(private router: Router, private location: Location, private question: QuestionService, private http: HttpClient) {
   }
   ngOnInit() {
     if (localStorage.getItem('userid') != null) {
@@ -42,6 +44,8 @@ export class NavbarComponent implements OnInit {
     } else {
       console.log(location.pathname + '  else');
       // question component
+       // console.log(form.value.search);
+        this.question.getQuestions(undefined, undefined, form.value.search);
     }
   }
 
