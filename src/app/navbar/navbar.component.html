@@ -23,7 +23,7 @@
         <a class="nav-link" (click)="signout()">Sign out</a>
       </li>
       <li *ngIf="loggedIn; else notShow" class="nav-item">
-        <a class="nav-link" routerLink="/main/freelance/account-freelance">{{user.username}}</a>
+        <a class="nav-link" routerLink="/main/userprofile">{{user.username}}</a>
       </li>
        <ng-template #notShow>
          <li class="nav-item">

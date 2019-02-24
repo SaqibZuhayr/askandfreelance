@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 // import {mimeType} from '../questions/mimetype.validator';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -12,7 +12,7 @@ import {HttpClient} from '@angular/common/http';
 export class AddGigsComponent implements OnInit {
 nform: FormGroup;
   imagePreview ;
-  constructor(public route: ActivatedRoute, private http: HttpClient) { }
+  constructor(public route: ActivatedRoute, public router: Router, private http: HttpClient) { }
   ngOnInit() {
     this.nform = new FormGroup({
       image: new FormControl(null, {
@@ -51,5 +51,10 @@ nform: FormGroup;
     };
     reader.readAsDataURL(file);
 
+  }
+
+  onBack() {
+    console.log('asdasd');
+    this.router.navigate(['/main/userprofile']);
   }
 }

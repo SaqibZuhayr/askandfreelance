@@ -1,3 +1,15 @@
-<p>
-  user-profile works!
-</p>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="list-group">
+      <a routerLink="/main/userprofile/myquestion" class="list-group-item">My Questions</a>
+      <a href="#" class="list-group-item">My Answers</a>
+      <a routerLink="/main/freelance/account-freelance" class="list-group-item">Account</a>
+      <a href="#" class="list-group-item">Pending Orders</a>
+      <a href="#" class="list-group-item">Messages</a>
+      <a href="#" class="list-group-item">Sign out</a>
+    </div>
+  </div>
+  <div class="col-sm-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

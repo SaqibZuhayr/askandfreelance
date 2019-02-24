@@ -12,7 +12,7 @@ export class QuestionService {
 
   constructor(private http: HttpClient) { }
 
-  getQuestions(tag){
+  getQuestions(tag) {
     this.http.post('http://localhost:3000/questions', {tag}).subscribe((data) => {
           this.questions.next(data);
     });

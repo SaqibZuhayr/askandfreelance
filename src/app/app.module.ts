@@ -26,6 +26,8 @@ import { JobsSidebarComponent } from './jobs-sidebar/jobs-sidebar.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { PostJobComponent } from './post-job/post-job.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { UserProfileDetailsComponent } from './user-profile-details/user-profile-details.component';
+import { QuestionmainComponent } from './questionmain/questionmain.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { JobDetailsComponent } from './job-details/job-details.component';
     JobsSidebarComponent,
     JobsComponent,
     PostJobComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
+    UserProfileDetailsComponent,
+    QuestionmainComponent
   ],
   imports: [
     BrowserModule,
