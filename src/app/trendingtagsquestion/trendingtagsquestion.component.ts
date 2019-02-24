@@ -22,7 +22,7 @@ export class TrendingtagsquestionComponent implements OnInit {
   }
 
   searchTag(tag) {
-    this.question.getQuestions(tag, undefined);
+    this.question.getQuestions(tag, undefined, undefined);
   }
 
   getQuestionCategories() {

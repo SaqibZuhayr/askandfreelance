@@ -23,14 +23,14 @@ export class QuestionsComponent implements OnInit {
   ngOnInit() {
     if (location.pathname === '/main') {
       // localStorage.setItem('component', 'q/a');
-      this.question.getQuestions(undefined, undefined);
+      this.question.getQuestions(undefined, undefined,undefined);
       this.question.questionObservable.subscribe(value => {
         this.Question = value;
       });
     } else {
       console.log(location.pathname);
       // yeh user k apnay question hn
-      this.question.getQuestions(undefined, localStorage.getItem('userid'));
+      this.question.getQuestions(undefined, localStorage.getItem('userid'),undefined);
       this.question.questionObservable.subscribe(value => {
         this.Question = value;
       });
