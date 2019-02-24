@@ -28,6 +28,7 @@ import { PostJobComponent } from './post-job/post-job.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { UserProfileDetailsComponent } from './user-profile-details/user-profile-details.component';
 import { QuestionmainComponent } from './questionmain/questionmain.component';
+import { MyanswerComponent } from './myanswer/myanswer.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { QuestionmainComponent } from './questionmain/questionmain.component';
     PostJobComponent,
     JobDetailsComponent,
     UserProfileDetailsComponent,
-    QuestionmainComponent
+    QuestionmainComponent,
+    MyanswerComponent
   ],
   imports: [
     BrowserModule,

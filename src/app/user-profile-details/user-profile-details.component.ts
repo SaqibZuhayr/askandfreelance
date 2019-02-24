@@ -13,6 +13,6 @@ export class UserProfileDetailsComponent implements OnInit {
   ngOnInit() {
   }
    addnewgigs() {
-    this.router.navigate(['main/freelance/add-gig']);
+    this.router.navigate(['main/userprofile/add-gig']);
   }
 }
