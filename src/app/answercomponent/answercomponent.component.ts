@@ -23,6 +23,10 @@ export class AnswercomponentComponent implements OnInit {
     if (form.invalid) {
       return;
     }
+    if (!localStorage.getItem('userid')){
+      alert('LOGIN REQUIRED');
+      return;
+    }
     console.log('answer');
     this.http.post('http://localhost:3000/postanswer', {
       'answer':  form.value.answer,

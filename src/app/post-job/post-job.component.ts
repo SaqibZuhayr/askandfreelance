@@ -21,6 +21,10 @@ export class PostJobComponent implements OnInit {
     if (form.invalid) {
       return;
     }
+    if (!localStorage.getItem('userid')){
+      alert('LOGIN REQUIRED');
+      return;
+    }
     this.http.post('http://localhost:3000/postjobs', {'job':  form.value, 'userid': this.userid })
       .subscribe((data) => {
       console.log(data);

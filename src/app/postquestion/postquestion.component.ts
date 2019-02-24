@@ -23,6 +23,10 @@ export class PostquestionComponent implements OnInit {
     if (form.invalid) {
       return;
     }
+    if (!localStorage.getItem('userid')){
+      alert('LOGIN REQUIRED');
+      return;
+    }
     console.log('postQuestion');
     console.log(this.userid);
     this.http.post('http://localhost:3000/postquestion', {

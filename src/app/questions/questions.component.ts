@@ -17,7 +17,6 @@ export class QuestionsComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private question: QuestionService) { }
 
   ngOnInit() {
-    localStorage.setItem('component', 'q/a');
     this.question.getQuestions(undefined);
     this.question.questionObservable.subscribe(value => {
       this.Question = value;
