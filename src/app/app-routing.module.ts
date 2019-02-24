@@ -18,6 +18,7 @@ import {JobDetailsComponent} from './job-details/job-details.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {UserProfileDetailsComponent} from './user-profile-details/user-profile-details.component';
 import {QuestionmainComponent} from './questionmain/questionmain.component';
+import {MyanswerComponent} from './myanswer/myanswer.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -38,7 +39,9 @@ const routes: Routes = [
         path: 'userprofile', component: UserProfileComponent,
         children: [
           {path: '', component: UserProfileDetailsComponent},
-          {path: 'myquestion', component: QuestionsComponent}
+          {path: 'myquestion', component: QuestionsComponent},
+          {path: 'myanswer', component: MyanswerComponent},
+          {path: 'add-gig', component: AddGigsComponent}
         ]
       },
       {
@@ -54,8 +57,8 @@ const routes: Routes = [
         children: [
           {path: '', component: GigsMainComponent},
           {path: 'gig_details', component: GigsDetailsComponent},
-          {path: 'account-freelance', component: AccountFreelanceComponent},
-          {path: 'add-gig', component: AddGigsComponent}]
+          {path: 'account-freelance', component: AccountFreelanceComponent}
+        ]
       }
 
     ]
