@@ -1,4 +1,4 @@
 <div class="list-group">
   <h6 class="list-group-item">Trending Tags</h6>
-  <a *ngFor="let q of questions"  class="list-group-item"(click)="searchTag(q.question.category)">{{q.question.category}}</a>
+  <a *ngFor="let q of questiontags"  class="list-group-item"(click)="searchTag(q)">{{q}}</a>
 </div>

@@ -21,6 +21,13 @@ nform: FormGroup;
     });
   }
   onAddGig(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    if (!localStorage.getItem('userid')){
+      alert('LOGIN REQUIRED');
+      return;
+    }
     console.log(form.value);
     console.log(this.nform.value.image);
     this.http.post('http://localhost:3000/addgig', {'gig': form.value,

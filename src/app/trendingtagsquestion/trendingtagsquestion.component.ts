@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../services/question.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-trendingtagsquestion',
@@ -8,17 +9,25 @@ import { QuestionService } from '../services/question.service';
 })
 export class TrendingtagsquestionComponent implements OnInit {
 
-  constructor(private question: QuestionService) { }
+  constructor(private question: QuestionService, private http: HttpClient) {
+  }
 
-  questions = []
+  questiontags;
 
   ngOnInit() {
+    this.getQuestionCategories();
     this.question.questionObservable.subscribe((value) => {
-      this.questions = value;
+      // this.questions = value;
     });
   }
 
   searchTag(tag) {
     this.question.getQuestions(tag);
+  }
+
+  getQuestionCategories() {
+    this.http.get('http://localhost:3000/getquestiontags').subscribe((data) => {
+      this.questiontags = data;
+    });
   }
 }

@@ -10,7 +10,7 @@ export class FreelanceMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    localStorage.setItem('component', 'freelance');
+
   }
 
 }
