@@ -38,4 +38,5 @@ export class QuestionsComponent implements OnInit {
     console.log('asdasd');
     this.router.navigate(['main/postquestion']);
   }
+
 }
