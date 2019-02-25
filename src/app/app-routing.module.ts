@@ -39,7 +39,12 @@ const routes: Routes = [
         path: 'userprofile', component: UserProfileComponent,
         children: [
           {path: '', component: UserProfileDetailsComponent},
-          {path: 'myquestion', component: QuestionsComponent},
+          {
+            path: 'myquestion', component: QuestionsComponent,
+            // children: [
+            //   {path: 'answer/:id', component: AnswercomponentComponent},
+            // ]
+          },
           {path: 'myanswer', component: MyanswerComponent},
           {path: 'add-gig', component: AddGigsComponent}
         ]
