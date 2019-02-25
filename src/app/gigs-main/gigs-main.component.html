@@ -1,9 +1,10 @@
 <div class="row">
   <div class="card" style="width:15rem;" *ngFor="let g of gigs">
     <img class="card-img-top" src="{{g.photo}}" alt="Card image">
+    <hr>
     <div class="card-body">
-      <h5 class="card-title" ><a routerLink="gig_details/{{g._id}}">{{g.title}}</a></h5>
-        <p>4.2/5.0</p>
+      <h5 class="card-text"><a routerLink="gig_details/{{g._id}}">{{g.title}}</a></h5>
+      <p>4.2/5.0</p>
     </div>
   </div>
 </div>

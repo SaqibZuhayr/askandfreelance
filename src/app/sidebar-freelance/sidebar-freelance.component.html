@@ -1,6 +1,4 @@
 <div class="list-group">
   <h6 class="list-group-item">Trending Tags</h6>
-  <a href="" class="list-group-item">Graphics Designing</a>
-  <a href="" class="list-group-item">Angular</a>
-  <a href="" class="list-group-item">MERN Stack</a>
+  <a *ngFor="let f of freelancetags" style="color: #009CDA"  class="list-group-item">{{f}}</a>
 </div>

@@ -7,8 +7,9 @@
         <button type="button" class="btn btn-primary" (click)="addnewgigs()">Add New Gigs</button>
       </div>
 
-      <div *ngFor="let g of userGigs" class="card gig-card" style="height: 19rem; width: 16rem;">
-        <img class="card-img-top" src="{{g.photo}}" alt="Card image" style="width:100%">
+      <div *ngFor="let g of userGigs" class="card gig-card" style="width: 13rem;">
+        <img class="card-img-top" src="{{g.photo}}" alt="Card image" style="width: 13rem;">
+        <hr>
         <h6 class="card-title"><a routerLink="gig_details">{{g.title}}</a></h6>
         <p class="small">{{g.description}}</p>
         <p>4.2/5.0</p>

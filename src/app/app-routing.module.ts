@@ -56,7 +56,7 @@ const routes: Routes = [
         path: 'freelance', component: FreelanceMainComponent,
         children: [
           {path: '', component: GigsMainComponent},
-          {path: 'gig_details', component: GigsDetailsComponent},
+          {path: 'gig_details/:id', component: GigsDetailsComponent},
           {path: 'account-freelance', component: AccountFreelanceComponent}
         ]
       }

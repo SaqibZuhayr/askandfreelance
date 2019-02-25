@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -9,9 +9,14 @@ import {Router} from '@angular/router';
 })
 export class JobsComponent implements OnInit {
 
-  constructor(private route: Router, private http: HttpClient) { }
   jobs = [];
+  trendingtag;
+
+  constructor(private route: Router, private http: HttpClient) {
+  }
+
   ngOnInit() {
+    // this.jobTrending();
     this.http.post('http://localhost:3000/viewjobs', {}).subscribe((data) => {
       console.log(data);
       // @ts-ignore
@@ -25,8 +30,13 @@ export class JobsComponent implements OnInit {
     this.route.navigate(['main/jobs/post-job']);
   }
 
-  view_details(){
+  view_details() {
     this.route.navigate(['main/jobs/job-details']);
   }
+
+  // jobTrending() {
+  //   this.http.get('http://localhost:3000/gettrendingjobs').subscribe((data) =>
+  //     this.trendingtag = data);
+  // }
 
 }

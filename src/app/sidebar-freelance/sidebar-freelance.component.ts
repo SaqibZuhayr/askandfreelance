@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-sidebar-freelance',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarFreelanceComponent implements OnInit {
 
-  constructor() { }
+  freelancetags;
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
+    this.getFreelanceCategories();
+  }
+
+  getFreelanceCategories() {
+    this.http.get('http://localhost:3000/getfreelancetags').subscribe((data) => {
+      this.freelancetags = data;
+    });
   }
 
 }
