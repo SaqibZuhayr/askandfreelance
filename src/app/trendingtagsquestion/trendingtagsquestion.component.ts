@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { QuestionService } from '../services/question.service';
+import {Component, OnInit} from '@angular/core';
+import {QuestionService} from '../services/question.service';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -23,6 +23,7 @@ export class TrendingtagsquestionComponent implements OnInit {
 
   searchTag(tag) {
     this.question.getQuestions(tag, undefined, undefined);
+
   }
 
   getQuestionCategories() {

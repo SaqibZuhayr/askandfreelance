@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
 
@@ -11,7 +11,7 @@ import {NgForm} from '@angular/forms';
 export class AnswercomponentComponent implements OnInit {
 
 
-  constructor(public route: ActivatedRoute, private http: HttpClient) { }
+  constructor(public route: ActivatedRoute, public router: Router, private http: HttpClient) { }
   questionID: string;
   answers = [];
   userid = ' ';
@@ -53,6 +53,11 @@ export class AnswercomponentComponent implements OnInit {
 
       });
     } );
+  }
+
+  onBack() {
+    console.log('asdasd');
+    this.router.navigate(['/main']);
   }
 
 

@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-sm-2">
-    <div class="card">
-      <app-sidebar-question></app-sidebar-question>
-    </div>
+    <button type="button" class="float-right btn btn-primary" (click)="back()">Back</button>
   </div>
   <div class="col-sm-8">
     <div class="card col-sm-12">
@@ -29,7 +27,7 @@
             Question is required.
           </div>
         </div>
-        <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+
         <button type="submit" class="float-right btn btn-primary">Submit</button>
       </form>
     </div>
