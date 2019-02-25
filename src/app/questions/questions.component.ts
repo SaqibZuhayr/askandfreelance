@@ -16,6 +16,7 @@ import elementIsSelected = until.elementIsSelected;
 export class QuestionsComponent implements OnInit {
 
   Question;
+  ans;
 
   constructor(private http: HttpClient, private router: Router, private question: QuestionService, private location: Location) {
   }
@@ -26,6 +27,7 @@ export class QuestionsComponent implements OnInit {
       this.question.getQuestions(undefined, undefined,undefined);
       this.question.questionObservable.subscribe(value => {
         this.Question = value;
+        this.ans = 'answer/';
       });
     } else {
       console.log(location.pathname);
@@ -33,6 +35,7 @@ export class QuestionsComponent implements OnInit {
       this.question.getQuestions(undefined, localStorage.getItem('userid'),undefined);
       this.question.questionObservable.subscribe(value => {
         this.Question = value;
+        this.ans = '../../answer/';
       });
     }
 
