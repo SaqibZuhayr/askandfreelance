@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,7 @@ export class SignupComponent implements OnInit {
         'username' : form.value.usertext,
         'password' : form.value.passtext}).subscribe((data) => {
           console.log(data);
+          this.router.navigate(['']);
     });
   }
 

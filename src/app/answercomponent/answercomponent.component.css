@@ -11,3 +11,6 @@
 .abc{
 margin-top: 5px;
 }
+.image:hover {
+    transform: scale(1.05);
+}
