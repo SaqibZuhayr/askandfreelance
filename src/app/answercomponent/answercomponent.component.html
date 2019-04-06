@@ -22,10 +22,10 @@
             <div *ngFor="let a of answers.answer" class="card card-body">
               <div class="row">
                 <div class="col-md-1" style="text-align: center">
-                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png" (click)="addScore()">
-                  <a >455</a>
+                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png" (click)="addScore(a._id)">
+                  <a >{{a.rating.score}}</a>
                   <img src="https://img.icons8.com/color/48/000000/ok.png">
-                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png" (click)="subScore()">
+                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png" (click)="subScore(a._id)">
 
                 </div>
                 <div class="col-md-10">

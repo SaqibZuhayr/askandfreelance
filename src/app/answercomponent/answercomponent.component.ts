@@ -51,6 +51,7 @@ export class AnswercomponentComponent implements OnInit {
   fetchAnswer() {
     this.route.params.subscribe((params) => {
       console.log(params.id);
+      this.questionID = params.id;
       this.http.post('http://localhost:3000/answers', {'questionID': params.id}).subscribe((data) => {
         console.log(data[0]);
         this.answers = data[0];
@@ -66,12 +67,26 @@ export class AnswercomponentComponent implements OnInit {
     this.router.navigate(['/main']);
   }
 
-  addScore() {
-    console.log('123');
+  addScore(answerId) {
+    this.ratingAnswer('add', answerId);
+
   }
 
-  subScore() {
-    console.log('abc');
+  subScore(answerId) {
+    this.ratingAnswer('sub', answerId);
+  }
+
+
+  ratingAnswer(rate, answerId){
+    if (!localStorage.getItem('userid')) {
+      alert('LOGIN REQUIRED');
+      return;
+    }
+    this.http.post('http://localhost:3000/rateanswer', {rate : rate, answerId : answerId, qId : this.questionID})
+      .subscribe((data) => {
+        console.log(data);
+        this.fetchAnswer();
+      });
   }
 
 
