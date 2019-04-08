@@ -31,6 +31,7 @@ import { QuestionmainComponent } from './questionmain/questionmain.component';
 import { MyanswerComponent } from './myanswer/myanswer.component';
 import { ChatComponent } from './chat/chat.component';
 import { MessageComponent } from './message/message.component';
+import {MessageService} from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { MessageComponent } from './message/message.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
