@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -8,10 +8,11 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./gigs-details.component.css']
 })
 export class GigsDetailsComponent implements OnInit {
-
+  receivername: string;
+  receiverid: string;
   Gig;
 
-  constructor(public route: ActivatedRoute, private http: HttpClient) {
+  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) {
   }
 
   ngOnInit() {
@@ -23,12 +24,18 @@ export class GigsDetailsComponent implements OnInit {
     this.route.params.subscribe((params) => {
       console.log(params.id);
       this.http.post('http://localhost:3000/gigdetail', {'gigid': params.id}).subscribe((data) => {
-        // console.log(data[0]);
+        this.receiverid = data['userid'];
+        this.receivername = data['username'];
         this.Gig = data;
 
 
       });
     });
+  }
+
+  chat() {
+    // console.log(this.receiverid,this.receivername)
+    this.router.navigate(['main/userprofile/chat/'], {queryParams: {id: this.receiverid, name: this.receivername}});
   }
 
 }

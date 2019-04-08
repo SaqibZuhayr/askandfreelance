@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -9,15 +10,16 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
   tabElement: any;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.tabElement = document.querySelector('');
+    //this.tabElement = document.querySelector('');
+
   }
 
   ngAfterViewInit() {
-    this.tabElement.style.display = 'none';
+   //  this.tabElement.style.display = 'none';
   }
 
 }

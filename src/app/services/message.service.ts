@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -7,10 +7,13 @@ import {Observable} from 'rxjs';
 })
 export class MessageService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  SendMessage(senderId, receiverId, receiverName, message): Observable<any>{
-    return this.http.post(`http://localhost:3000/chat/${senderId}/${receiverId}`,{
+  SendMessage(senderId, senderName, receiverId, receiverName, message): Observable<any> {
+    return this.http.post(`http://localhost:3000/chat`, {
+      senderId,
+      senderName,
       receiverId,
       receiverName,
       message

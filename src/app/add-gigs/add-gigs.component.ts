@@ -32,7 +32,8 @@ nform: FormGroup;
     console.log(this.nform.value.image);
     this.http.post('http://localhost:3000/addgig', {'gig': form.value,
       'image': this.imagePreview,
-      'userid': localStorage.getItem('userid')
+      'userid': localStorage.getItem('userid'),
+      'username': localStorage.getItem('username')
       })
       .subscribe((data) => {
       console.log(data);

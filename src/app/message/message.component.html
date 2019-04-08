@@ -77,10 +77,10 @@
           <form (ngSubmit)="SendMessage()">
             <div class="row">
               <div class="input field col-sm-10">
-                <input type="text" style="width:inherit; height: 40px;" name="message">
+                <input type="text" [(ngModel)]="message" (input)="func()" style="width:inherit; height: 40px;" name="message">
               </div>
               <div class="col-sm-2">
-                <button type="button" class="btn btn-primary" style="width: inherit">Send</button>
+                <button type="button" (click)="sendMessage()" class="btn btn-primary" style="width: inherit">Send</button>
               </div>
             </div>
           </form>
