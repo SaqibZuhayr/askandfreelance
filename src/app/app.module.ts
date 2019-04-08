@@ -31,8 +31,10 @@ import { QuestionmainComponent } from './questionmain/questionmain.component';
 import { MyanswerComponent } from './myanswer/myanswer.component';
 import { ChatComponent } from './chat/chat.component';
 import { MessageComponent } from './message/message.component';
+import {MessageService} from './services/message.service';
 import { UserProfileSidebarComponent } from './user-profile-sidebar/user-profile-sidebar.component';
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +74,7 @@ import { ConversationListComponent } from './conversation-list/conversation-list
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
