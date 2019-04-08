@@ -31,6 +31,8 @@ import { QuestionmainComponent } from './questionmain/questionmain.component';
 import { MyanswerComponent } from './myanswer/myanswer.component';
 import { ChatComponent } from './chat/chat.component';
 import { MessageComponent } from './message/message.component';
+import { UserProfileSidebarComponent } from './user-profile-sidebar/user-profile-sidebar.component';
+import { ConversationListComponent } from './conversation-list/conversation-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { MessageComponent } from './message/message.component';
     QuestionmainComponent,
     MyanswerComponent,
     ChatComponent,
-    MessageComponent
+    MessageComponent,
+    UserProfileSidebarComponent,
+    ConversationListComponent
   ],
   imports: [
     BrowserModule,
