@@ -13,7 +13,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.tabElement = document.querySelector('app-sidebar-freelance');
+    this.tabElement = document.querySelector('');
   }
 
   ngAfterViewInit() {
