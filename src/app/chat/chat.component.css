@@ -4,3 +4,7 @@ chat{
   position: relative;
   max-height: 700px !important;
 }
+.col-sm-2{
+  margin-left: 15px;
+  margin-right: 25px;
+}

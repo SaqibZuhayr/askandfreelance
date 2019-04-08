@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
@@ -9,24 +9,26 @@ import {HttpClient} from '@angular/common/http';
 })
 export class GigsDetailsComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute, private http: HttpClient) { }
   Gig;
+
+  constructor(public route: ActivatedRoute, private http: HttpClient) {
+  }
+
   ngOnInit() {
     this.fetchGigDetails();
   }
 
-  fetchGigDetails(){
+  fetchGigDetails() {
 
-    this.route.params.subscribe( (params) => {
+    this.route.params.subscribe((params) => {
       console.log(params.id);
       this.http.post('http://localhost:3000/gigdetail', {'gigid': params.id}).subscribe((data) => {
         // console.log(data[0]);
         this.Gig = data;
 
 
-
       });
-    } );
+    });
   }
 
 }

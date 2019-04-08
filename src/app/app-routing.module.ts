@@ -47,6 +47,7 @@ const routes: Routes = [
             // ]
           },
           {path: 'myanswer', component: MyanswerComponent},
+          {path: 'chat', component: ChatComponent},
           {path: 'add-gig', component: AddGigsComponent}
         ]
       },
@@ -63,8 +64,7 @@ const routes: Routes = [
         children: [
           {path: '', component: GigsMainComponent},
           {path: 'gig_details/:id', component: GigsDetailsComponent},
-          {path: 'account-freelance', component: AccountFreelanceComponent},
-          {path: 'chat', component: ChatComponent}
+          {path: 'account-freelance', component: AccountFreelanceComponent}
         ]
       }
 
