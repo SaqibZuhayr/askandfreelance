@@ -29,6 +29,8 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 import { UserProfileDetailsComponent } from './user-profile-details/user-profile-details.component';
 import { QuestionmainComponent } from './questionmain/questionmain.component';
 import { MyanswerComponent } from './myanswer/myanswer.component';
+import { ChatComponent } from './chat/chat.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { MyanswerComponent } from './myanswer/myanswer.component';
     JobDetailsComponent,
     UserProfileDetailsComponent,
     QuestionmainComponent,
-    MyanswerComponent
+    MyanswerComponent,
+    ChatComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

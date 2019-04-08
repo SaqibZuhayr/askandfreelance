@@ -19,6 +19,7 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {UserProfileDetailsComponent} from './user-profile-details/user-profile-details.component';
 import {QuestionmainComponent} from './questionmain/questionmain.component';
 import {MyanswerComponent} from './myanswer/myanswer.component';
+import {ChatComponent} from './chat/chat.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -62,7 +63,8 @@ const routes: Routes = [
         children: [
           {path: '', component: GigsMainComponent},
           {path: 'gig_details/:id', component: GigsDetailsComponent},
-          {path: 'account-freelance', component: AccountFreelanceComponent}
+          {path: 'account-freelance', component: AccountFreelanceComponent},
+          {path: 'chat', component: ChatComponent}
         ]
       }
 
