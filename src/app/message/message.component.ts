@@ -33,6 +33,7 @@ export class MessageComponent implements OnInit {
         this.GetAllMessages(localStorage.getItem('userid'), this.receiverid);
       });
 
+
     });
 
   }
@@ -43,9 +44,11 @@ export class MessageComponent implements OnInit {
         .SendMessage(localStorage.getItem('userid'), localStorage.getItem('username'), this.receiverid, this.receivername, this.message)
         .subscribe(data => {
           console.log(data);
+          this.socket.emit('refresh', {});
           this.message = '';
           this.tabElement = document.querySelector('input');
           this.tabElement.text = '';
+
         });
     }
   }
@@ -53,7 +56,6 @@ export class MessageComponent implements OnInit {
   GetAllMessages(senderid, receiverid) {
     this.msgService.GetMessage(senderid, receiverid).subscribe(data => {
         console.log(data);
-        this.socket.emit('refresh', {});
         this.messageArray = data.messages.message;
       }
     );
