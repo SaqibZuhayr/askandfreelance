@@ -6,11 +6,11 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-12 chat-body">
+  <div class="col-sm-12 chat-body" >
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12" *ngFor="let user of conversations">
         <div class="message-wrapper" style="text-align: center" >
-          <a href="#">Uzair Khan</a>
+          <a (click)="chat(user._id, user.username)">{{user.username}}</a>
           <hr>
         </div>
       </div>

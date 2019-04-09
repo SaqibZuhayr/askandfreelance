@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-conversation-list',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversationListComponent implements OnInit {
 
-  constructor() { }
+  conversations: any;
 
-  ngOnInit() {
+  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) {
   }
 
+  ngOnInit() {
+    this.fetchConversations();
+
+  }
+
+  fetchConversations() {
+    this.http.post('http://localhost:3000/getConversations', {'userid': localStorage.getItem('userid')})
+      .subscribe((data) => {
+        this.conversations = data;
+        console.log(data);
+
+
+      });
+  }
+
+  chat(id, username) {
+    // console.log(this.receiverid,this.receivername)
+    this.router.navigate(['main/userprofile/chat/'], {queryParams: {id: id, name: username}});
+  }
 }
