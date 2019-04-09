@@ -19,4 +19,11 @@ export class MessageService {
       message
     });
   }
+
+  GetMessage(senderId, receiverId): Observable<any> {
+    return this.http.post(`http://localhost:3000/getchat`, {
+      senderId,
+      receiverId,
+    });
+  }
 }

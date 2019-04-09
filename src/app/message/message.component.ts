@@ -13,6 +13,7 @@ export class MessageComponent implements OnInit {
   receivername: string;
   receiverid: string;
   message: string = 'saqib';
+  messageArray = [];
 
   constructor(private msgService: MessageService, private route: ActivatedRoute) {
   }
@@ -22,6 +23,7 @@ export class MessageComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.receivername = params.name;
       this.receiverid = params.id;
+      this.GetAllMessages(localStorage.getItem('userid'), this.receiverid);
 
     });
 
@@ -29,7 +31,8 @@ export class MessageComponent implements OnInit {
 
   sendMessage() {
     if (this.message) {
-      this.msgService.SendMessage(localStorage.getItem('userid'), localStorage.getItem('username'), this.receiverid, this.receivername, this.message)
+      this.msgService
+        .SendMessage(localStorage.getItem('userid'), localStorage.getItem('username'), this.receiverid, this.receivername, this.message)
         .subscribe(data => {
           console.log(data);
           this.message = '';
@@ -37,6 +40,13 @@ export class MessageComponent implements OnInit {
           this.tabElement.text = '';
         });
     }
+  }
+
+  GetAllMessages(senderid, receiverid) {
+    this.msgService.GetMessage(senderid, receiverid).subscribe(data => {
+        console.log(data);
+      }
+    );
   }
 
   func() {
