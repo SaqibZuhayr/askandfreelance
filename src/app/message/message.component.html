@@ -7,7 +7,7 @@
             <img src="https://via.placeholder.com/60" class="circle">
           </div>
           <div class="col-sm-8">
-            <span style="color: white">username</span>
+            <span style="color: white">{{receivername}}</span>
             <p class="isOnline" style="color: white">Online</p>
           </div>
         </div>
@@ -18,48 +18,21 @@
   <div class="col-sm-12 chat-body">
     <div class="row">
       <div class="col-sm-12">
-        <div class="message-wrapper">
+        <div class="message-wrapper" *ngFor="let message of messageArray">
           <div class="row">
-            <div class="left col-sm-12">
+            <div class="left col-sm-12" *ngIf="username != receivername && username != message.sendername">
               <div class="chat-bubble left slide-left">
                 <div class="message">
-                  <p>left message</p>
+                  <p>{{message.body}}</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="right col-sm-12">
+            <div class="right col-sm-12" *ngIf="username === message.sendername">
               <div class="chat-bubble right slide-right">
                 <div class="message">
-                  <p>right message</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="left col-sm-12">
-              <div class="chat-bubble left slide-left">
-                <div class="message">
-                  <p>left message</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="right col-sm-12">
-              <div class="chat-bubble right slide-right">
-                <div class="message">
-                  <p>right message</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="right col-sm-12">
-              <div class="chat-bubble right slide-right">
-                <div class="message">
-                  <p>right message</p>
+                  <p>{{message.body}}</p>
                 </div>
               </div>
             </div>
