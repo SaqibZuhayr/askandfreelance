@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxAutoScrollModule } from 'ngx-auto-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -72,7 +73,8 @@ import { ConversationListComponent } from './conversation-list/conversation-list
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxAutoScrollModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

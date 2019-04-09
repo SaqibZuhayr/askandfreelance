@@ -17,6 +17,8 @@ export class MessageComponent implements OnInit {
   username: string;
   messageArray = [];
   socket: any;
+  typingMessage;
+  typing = false;
 
   constructor(private msgService: MessageService, private route: ActivatedRoute) {
     this.socket = io('http://localhost:3000');
@@ -34,6 +36,19 @@ export class MessageComponent implements OnInit {
       });
 
 
+    });
+
+    this.socket.on('is_typing', data => {
+
+      if (data.sender === this.receivername) {
+        this.typing = true;
+      }
+    });
+
+    this.socket.on('has_stop', data => {
+      if (data.sender === this.receivername) {
+        this.typing = false;
+      }
     });
 
   }
@@ -61,8 +76,24 @@ export class MessageComponent implements OnInit {
     );
   }
 
-  func() {
-    console.log(this.message);
+  isTyping() {
+    this.socket.emit('start_typing', {
+      sender: localStorage.getItem('username'),
+      receiver: this.receivername
+    });
+
+    if (this.typingMessage) {
+      clearTimeout(this.typingMessage);
+    }
+
+    this.typingMessage = setTimeout(() => {
+      this.socket.emit('stop_typing', {
+        sender: localStorage.getItem('username'),
+        receiver: this.receivername
+      });
+    }, 500);
+
   }
+
 
 }

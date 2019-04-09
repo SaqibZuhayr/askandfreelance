@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="col-sm-12 chat-body">
+  <div class="col-sm-12 chat-body" ngx-auto-scroll lock-y-offset="10" observe-attributes>
     <div class="row">
       <div class="col-sm-12">
         <div class="message-wrapper" *ngFor="let message of messageArray">
@@ -38,6 +38,13 @@
             </div>
           </div>
         </div>
+        <div class="left col-sm-12" *ngIf= "typing">
+          <div class="chat-bubble left slide-left">
+            <div class="message">
+              <p>{{receivername}} is typing</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50,10 +57,12 @@
           <form (ngSubmit)="SendMessage()">
             <div class="row">
               <div class="input field col-sm-10">
-                <input type="text" [(ngModel)]="message" (input)="func()" style="width:inherit; height: 40px;" name="message">
+                <input type="text" (keypress)="isTyping()" [(ngModel)]="message" style="width:inherit; height: 40px;"
+                       name="message">
               </div>
               <div class="col-sm-2">
-                <button type="button" (click)="sendMessage()" class="btn btn-primary" style="width: inherit">Send</button>
+                <button type="button" (click)="sendMessage()" class="btn btn-primary" style="width: inherit">Send
+                </button>
               </div>
             </div>
           </form>
