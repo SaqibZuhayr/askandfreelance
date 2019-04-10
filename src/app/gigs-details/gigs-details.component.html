@@ -11,6 +11,73 @@
     </div>
     <h4>Description:</h4>
     <p>{{Gig.description}}</p>
-    <button (click)="chat()">Chat</button>
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Create Order
+        </button>
+        <button class="btn btn-primary" style="float: right" (click)="chat()">Chat</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form" (submit)="onOrder(onOrder)" #onOrder="ngForm">
+          <div class="form-group balance">
+            <input class="form-control" id="order_name" placeholder="Enter Order Name" name="order_name" autofocus
+                   ngModel
+                   #order_name="ngModel" required>
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+          </div>
+          <div class="form-group">
+          <textarea class="form-control" rows="5" id="order_description" placeholder="Order Description"
+                    name="order_description" autofocus ngModel #order_description="ngModel" required></textarea>
+          </div>
+          <div *ngIf="order_description.invalid && order_description.touched"
+               class="alert alert-danger">
+            <div *ngIf="order_description.errors.required">
+              Order Description is required.
+            </div>
+          </div>
+          <div class="form-group balance">
+            <input class="form-control" id="order_price" placeholder="Order Price" name="order_price" autofocus ngModel
+                   #order_price="ngModel" required>
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+          </div>
+          <div *ngIf="order_price.invalid && order_price.touched" class="alert alert-danger">
+            <div *ngIf="order_price.errors.required">
+              Order price is required.
+            </div>
+          </div>
+          <div class="form-group balance">
+            <input class="form-control" id="order_delivery_time" placeholder="Order Delivery Time"
+                   name="order_delivery_time" autofocus ngModel
+                   #order_delivery_time="ngModel" required>
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+          </div>
+          <div *ngIf="order_delivery_time.invalid && order_delivery_time.touched" class="alert alert-danger">
+            <div *ngIf="order_delivery_time.errors.required">
+              Order delivery time is required.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
   </div>
 </div>
