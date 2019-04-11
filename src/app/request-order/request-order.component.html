@@ -4,6 +4,7 @@
   </div>
   <div class="col-sm-7">
     <div class="container">
+<<<<<<< HEAD
       <div id="accordion">
         <div class="card">
           <div class="card-header">
@@ -26,12 +27,51 @@
 
             </div>
           </div>
+=======
+  <div id="accordion">
+    <div class="card" *ngFor="let order of orderRequests">
+      <div class="card-header">
+        <a class="card-link">
+          {{order.title}}
+        </a>
+      </div>
+      <div class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          <h6>Order Price: <a>{{order.amount}}</a></h6>
+          <hr>
+          <h6>Order Description:</h6>
+          <p>{{order.description}}</p>
+          <hr>
+          <h6>Order Delivery Time:</h6>
+          <p>{{order.time_limit}}</p>
+          <hr>
+
+      <button type="button" class="btn btn-primary" (click)="accept(order._id)">Accept</button>
+    
+>>>>>>> 15eee657cd0bbf1e8bd47b786b464ae8c5f6f7b8
         </div>
 
       </div>
     </div>
   </div>
   <div class="col-sm-3">
+<<<<<<< HEAD
     <app-rightsidebar-user-detail></app-rightsidebar-user-detail>
+=======
+    <div class="card color">
+      <div class="card-body  col-sm-12" style="width: 25rem;">
+        <div class="card-header">
+          Details:
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Total Gigs : <span></span></li>
+          <li class="list-group-item">Orders Completed : <span></span></li>
+          <li class="list-group-item">Average Gigs Rating : <span></span></li>
+          <li class="list-group-item">Questions Posted : <span></span></li>
+          <li class="list-group-item">Answer Posted : <span></span></li>
+        </ul>
+      </div>
+    </div>
+>>>>>>> 15eee657cd0bbf1e8bd47b786b464ae8c5f6f7b8
   </div>
 </div>

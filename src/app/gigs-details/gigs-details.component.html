@@ -33,7 +33,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="form" (submit)="onOrder(onOrder)" #onOrder="ngForm">
+        <form class="form" (submit)="onOrder(Order)" #Order="ngForm">
           <div class="form-group balance">
             <input class="form-control" id="order_name" placeholder="Enter Order Name" name="order_name" autofocus
                    ngModel
@@ -73,7 +73,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" >Submit</button>
           </div>
         </form>
       </div>
