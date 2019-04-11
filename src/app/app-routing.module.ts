@@ -20,6 +20,8 @@ import {UserProfileDetailsComponent} from './user-profile-details/user-profile-d
 import {QuestionmainComponent} from './questionmain/questionmain.component';
 import {MyanswerComponent} from './myanswer/myanswer.component';
 import {ChatComponent} from './chat/chat.component';
+import {RequestOrderComponent} from './request-order/request-order.component';
+import {PendingOrdersComponent} from './pending-orders/pending-orders.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -48,7 +50,9 @@ const routes: Routes = [
           },
           {path: 'myanswer', component: MyanswerComponent},
           {path: 'chat', component: ChatComponent},
-          {path: 'add-gig', component: AddGigsComponent}
+          {path: 'add-gig', component: AddGigsComponent},
+          {path: 'order-requests', component: RequestOrderComponent},
+          {path: 'pending-orders', component: PendingOrdersComponent}
         ]
       },
       {

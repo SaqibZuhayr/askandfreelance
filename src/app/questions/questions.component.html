@@ -1,6 +1,69 @@
-<div class="row">
-  <div class="col-sm-12">
+<div class="row" *ngIf="checkbool">
+  <div class="col-sm-2">
+    <div class="list-group">
+      <a routerLink="/main/userprofile/myquestion" class="list-group-item">My Questions</a>
+      <a routerLink="/main/userprofile/myanswer" class="list-group-item">My Answers</a>
+      <a routerLink="/main/userprofile/chat" class="list-group-item">Chat</a>
+      <a routerLink="/main/userprofile/order-requests" class="list-group-item">Orders Request</a>
+      <a routerLink="/main/userprofile/pending-orders" class="list-group-item">Pending Orders</a>
+      <a class="list-group-item">Sign out</a>
+    </div>
+
+  </div>
+  <div class="col-sm-7">
     <div class="card">
+      <div class="row tags">
+        <div class="col-sm-12">
+          <button type="button" class="float-right btn btn-primary" (click)="post_question()">Ask Question</button>
+          <h4>Recent Questions</h4>
+        </div>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let q of Question" class="card border-info mb-3">
+          <div class="card">
+            <div class="row">
+              <div class="col-md-3">
+                <p class="card-text small question">{{q.user.username}}</p>
+              </div>
+
+              <div class="col-md-9">
+                <p><a routerLink="{{ans}}{{q.question._id}}" class="card-link">{{q.question.question}}</a></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9 small question">
+                <p>Answers : {{q.question.answer.length}}</p>
+              </div>
+              <div class="col-sm-2 small">
+                <a href="#" class="card-link">{{q.category}}</a>
+                <a href="#" class="card-link">{{q.category}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card color">
+      <div class="card-body  col-sm-12" style="width: 25rem;">
+        <div class="card-header">
+          Details:
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Total Gigs : <span>{{userGigs.length}}</span></li>
+          <li class="list-group-item">Orders Completed : <span></span></li>
+          <li class="list-group-item">Average Gigs Rating : <span></span></li>
+          <li class="list-group-item">Questions Posted : <span></span></li>
+          <li class="list-group-item">Answer Posted : <span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="bool">
+  <div class="col-sm-12">
+    <div class="card">asd
       <div class="row tags">
         <div class="col-sm-12">
           <button type="button" class="float-right btn btn-primary" (click)="post_question()">Ask Question</button>

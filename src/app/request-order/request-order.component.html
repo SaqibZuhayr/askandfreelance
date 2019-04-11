@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-2">
+    <app-user-profile-sidebar></app-user-profile-sidebar>
+  </div>
+  <div class="col-sm-7">
+    <div class="container">
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link">
+          Order title
+        </a>
+      </div>
+      <div class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          <h6>Order Price: <a>{{45  | currency : 'PKR'}}</a></h6>
+          <hr>
+          <h6>Order Description:</h6>
+          <p>asdasdasd</p>
+          <hr>
+          <h6>Order Delivery Time:</h6>
+          <p>sdasdasds</p>
+          <hr>
+
+      <button type="button" class="btn btn-primary" (click)="accept()">Accept</button>
+    
+        </div>
+      </div>
+    </div>
+
+    </div>
+</div>
+
+  </div>
+  <div class="col-sm-3">
+    <div class="card color">
+      <div class="card-body  col-sm-12" style="width: 25rem;">
+        <div class="card-header">
+          Details:
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Total Gigs : <span>{{userGigs.length}}</span></li>
+          <li class="list-group-item">Orders Completed : <span></span></li>
+          <li class="list-group-item">Average Gigs Rating : <span></span></li>
+          <li class="list-group-item">Questions Posted : <span></span></li>
+          <li class="list-group-item">Answer Posted : <span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,6 +35,8 @@ import { MessageComponent } from './message/message.component';
 import {MessageService} from './services/message.service';
 import { UserProfileSidebarComponent } from './user-profile-sidebar/user-profile-sidebar.component';
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
+import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
+import { RequestOrderComponent } from './request-order/request-order.component';
 
 
 @NgModule({
@@ -66,7 +68,9 @@ import { ConversationListComponent } from './conversation-list/conversation-list
     ChatComponent,
     MessageComponent,
     UserProfileSidebarComponent,
-    ConversationListComponent
+    ConversationListComponent,
+    PendingOrdersComponent,
+    RequestOrderComponent
   ],
   imports: [
     BrowserModule,

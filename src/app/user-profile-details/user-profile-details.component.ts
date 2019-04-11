@@ -11,6 +11,7 @@ export class UserProfileDetailsComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient) { }
   userGigs;
+  order_title = '1';
   ngOnInit() {
     this.fetchUserGigs();
   }
