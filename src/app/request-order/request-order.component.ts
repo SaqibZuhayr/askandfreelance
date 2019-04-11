@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-request-order',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestOrderComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  accept() {
+    console.log('asdasdasd');
   }
 
 }

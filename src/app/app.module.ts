@@ -37,6 +37,7 @@ import { UserProfileSidebarComponent } from './user-profile-sidebar/user-profile
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
 import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
 import { RequestOrderComponent } from './request-order/request-order.component';
+import { RightsidebarUserDetailComponent } from './rightsidebar-user-detail/rightsidebar-user-detail.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { RequestOrderComponent } from './request-order/request-order.component';
     UserProfileSidebarComponent,
     ConversationListComponent,
     PendingOrdersComponent,
-    RequestOrderComponent
+    RequestOrderComponent,
+    RightsidebarUserDetailComponent
   ],
   imports: [
     BrowserModule,
