@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-postquestion',
@@ -10,11 +11,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class PostquestionComponent implements OnInit {
 
-  constructor(private route: Router, private http: HttpClient) {
-  }
-
   userid = '';
   username = '';
+
+  constructor(private route: Router, private http: HttpClient, private location: Location) {
+  }
 
   ngOnInit() {
     this.userid = localStorage.getItem('userid');
@@ -41,7 +42,12 @@ export class PostquestionComponent implements OnInit {
   }
 
   back() {
-    this.route.navigate(['main']);
+    if (location.pathname === '/main') {
+      this.route.navigate(['main']);
+    } else {
+      this.route.navigateByUrl('/main/userprofile/myquestion');
+    }
+
   }
 
 

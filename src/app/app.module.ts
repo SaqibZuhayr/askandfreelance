@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxAutoScrollModule } from 'ngx-auto-scroll';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -80,7 +81,8 @@ import { RightsidebarUserDetailComponent } from './rightsidebar-user-detail/righ
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxAutoScrollModule
+    NgxAutoScrollModule,
+    NgxPaginationModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

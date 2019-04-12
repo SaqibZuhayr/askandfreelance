@@ -15,5 +15,9 @@ export class PendingOrdersComponent implements OnInit {
 
   onCancel() {
     console.log('asdasd');
-     }
+  }
+
+  onComplete() {
+
+  }
 }

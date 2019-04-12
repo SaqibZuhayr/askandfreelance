@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="card" style="width:15rem;" *ngFor="let g of gigs">
+  <div class="card" style="width:15rem;" *ngFor="let g of gigs | paginate: { itemsPerPage: 10, currentPage: p }">
     <img class="card-img-top" src="{{g.photo}}" alt="Card image">
     <hr>
     <div class="card-body">
@@ -7,4 +7,5 @@
       <p>4.2/5.0</p>
     </div>
   </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
@@ -10,21 +10,29 @@ import {HttpClient} from '@angular/common/http';
 export class RequestOrderComponent implements OnInit {
 
   orderRequests: any;
-  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
+
+  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) {
+  }
 
   ngOnInit() {
-   this.fetchOrderRequests();
+    this.fetchOrderRequests();
   }
 
 
   accept(id) {
-    this.http.post('http://localhost:3000/acceptOrder', {'userid': localStorage.getItem('userid')
-    , 'orderid': id})
+    this.http.post('http://localhost:3000/acceptOrder', {
+      'userid': localStorage.getItem('userid')
+      , 'orderid': id
+    })
       .subscribe((data) => {
-        console.log(data)
+        console.log(data);
         this.orderRequests = data;
       });
 
+  }
+
+  discard(id) {
+    
   }
 
   fetchOrderRequests() {
