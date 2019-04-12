@@ -12,31 +12,31 @@
           <div class="card">
             <div class="row">
               <div class="col-md-3">
-                <p class="card-text small question">{{answers.askedBy}}</p>
+                <p class="card-text small question">{{question.askedBy}}</p>
               </div>
 
               <div class="col-md-9">
-                <p><a href="#" class="card-link">{{answers.question}}</a></p>
+                <p><a href="#" class="card-link">{{question.question}}</a></p>
               </div>
             </div>
-            <div *ngFor="let a of answers.answer" class="card card-body">
+            <div *ngFor="let a of question.answers" class="card card-body">
               <div class="row">
                 <div class="col-md-1" style="text-align: center">
-                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png" (click)="addScore(a._id)">
-                  <a >{{a.rating.score}}</a>
+                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png" (click)="addScore(a.answer._id)">
+                  <a >{{a.score}}</a>
                   <img src="https://img.icons8.com/color/48/000000/ok.png">
-                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png" (click)="subScore(a._id)">
+                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png" (click)="subScore(a.answer._id)">
 
                 </div>
                 <div class="col-md-10">
                   <div class="row">
                     <div class="col-md-3">
-                      <p class="card-text small">{{a.answeredBy}}</p>
+                      <p class="card-text small">{{a.answer.answeredBy}}</p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <p><a href="#" class="card-link">{{a.answer}}</a></p>
+                      <p><a href="#" class="card-link">{{a.answer.answer}}</a></p>
                     </div>
                   </div>
                 </div>
@@ -58,10 +58,10 @@
             <!--</div>-->
             <div class="row">
               <div class="col-sm-9 small question">
-                <p>10 views &nbsp;&nbsp;&nbsp; {{answers.answer.length}} Answers</p>
+                <p>10 views &nbsp;&nbsp;&nbsp; {{question.answers.length}} Answers</p>
               </div>
               <div class="col-sm-2 small">
-                <a href="#" class="card-link">{{answers.category}}</a>
+                <a href="#" class="card-link">{{question.category}}</a>
               </div>
             </div>
           </div>
