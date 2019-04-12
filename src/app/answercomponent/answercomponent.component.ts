@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-answercomponent',
@@ -12,7 +13,7 @@ export class AnswercomponentComponent implements OnInit {
 
 
   questionID: string;
-  answers = [];
+  question: any;
   userid = ' ';
   username = ' ';
 
@@ -23,6 +24,7 @@ export class AnswercomponentComponent implements OnInit {
     this.userid = localStorage.getItem('userid');
     this.username = localStorage.getItem('username');
     this.fetchAnswer();
+
   }
 
   onPostAnswer(form: NgForm) {
@@ -36,7 +38,7 @@ export class AnswercomponentComponent implements OnInit {
     console.log('answer');
     this.http.post('http://localhost:3000/postanswer', {
       'answer': form.value.answer,
-      'questionID': this.answers['_id'],
+      'questionID': this.question['questionid'],
       'userid': this.userid,
       'answeredBy': this.username
     })
@@ -53,11 +55,8 @@ export class AnswercomponentComponent implements OnInit {
       console.log(params.id);
       this.questionID = params.id;
       this.http.post('http://localhost:3000/answers', {'questionID': params.id}).subscribe((data) => {
-        console.log(data[0]);
-        this.answers = data[0];
-        // console.log(this.answers);
-
-
+        this.question = data;
+         console.log(data);
       });
     });
   }
@@ -77,12 +76,15 @@ export class AnswercomponentComponent implements OnInit {
   }
 
 
-  ratingAnswer(rate, answerId){
+  ratingAnswer(rate, answerId) {
     if (!localStorage.getItem('userid')) {
       alert('LOGIN REQUIRED');
       return;
     }
-    this.http.post('http://localhost:3000/rateanswer', {rate : rate, answerId : answerId, qId : this.questionID})
+    this.http.post('http://localhost:3000/rateanswer', {
+      rate: rate, answerId: answerId, qId: this.questionID
+      , userid: this.userid
+    })
       .subscribe((data) => {
         console.log(data);
         this.fetchAnswer();
