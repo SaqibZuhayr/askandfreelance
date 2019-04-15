@@ -56,7 +56,7 @@ export class AnswercomponentComponent implements OnInit {
       this.questionID = params.id;
       this.http.post('http://localhost:3000/answers', {'questionID': params.id}).subscribe((data) => {
         this.question = data;
-         console.log(data);
+        // console.log(data);
       });
     });
   }
@@ -87,6 +87,9 @@ export class AnswercomponentComponent implements OnInit {
     })
       .subscribe((data) => {
         console.log(data);
+        if(data['message']){
+          alert('You have already rated this answer');
+        }
         this.fetchAnswer();
       });
   }

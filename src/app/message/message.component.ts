@@ -13,7 +13,7 @@ export class MessageComponent implements OnInit {
   tabElement: any;
   receivername: string;
   receiverid: string;
-  message = 'saqib';
+  message = '';
   username: string;
   messageArray = [];
   socket: any;
