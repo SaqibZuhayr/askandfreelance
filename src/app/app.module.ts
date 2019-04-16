@@ -39,6 +39,7 @@ import { ConversationListComponent } from './conversation-list/conversation-list
 import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
 import { RequestOrderComponent } from './request-order/request-order.component';
 import { RightsidebarUserDetailComponent } from './rightsidebar-user-detail/rightsidebar-user-detail.component';
+import { RecommededQuestionComponent } from './recommeded-question/recommeded-question.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { RightsidebarUserDetailComponent } from './rightsidebar-user-detail/righ
     ConversationListComponent,
     PendingOrdersComponent,
     RequestOrderComponent,
-    RightsidebarUserDetailComponent
+    RightsidebarUserDetailComponent,
+    RecommededQuestionComponent
   ],
   imports: [
     BrowserModule,

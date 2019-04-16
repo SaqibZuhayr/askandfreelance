@@ -7,11 +7,11 @@
       <div id="accordion">
         <div class="card" *ngFor="let order of orderRequests">
           <div class="card-header">
-            <a class="card-link">
+            <a class="card-link" data-toggle="collapse">
               {{order.title}}
             </a>
           </div>
-          <div class="collapse show" data-parent="#accordion">
+          <div  class="collapse show" data-parent="#accordion">
             <div class="card-body">
               <h6>Order Price: <a>{{order.amount}}</a></h6>
               <hr>

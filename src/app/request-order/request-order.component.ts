@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class RequestOrderComponent implements OnInit {
 
   orderRequests: any;
-
+  ordertitle: any;
   constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) {
   }
 
@@ -32,7 +32,7 @@ export class RequestOrderComponent implements OnInit {
   }
 
   discard(id) {
-    
+
   }
 
   fetchOrderRequests() {
