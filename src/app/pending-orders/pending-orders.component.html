@@ -5,21 +5,21 @@
   <div class="col-sm-7">
     <div class="container">
       <div id="accordion">
-        <div class="card">
+        <div class="card" *ngFor="let order of pendingOrders">
           <div class="card-header">
             <a class="card-link">
-              Order title
+              {{order.title}}
             </a>
           </div>
           <div class="collapse show" data-parent="#accordion">
             <div class="card-body">
-              <h6>Order Price: <a>{{45 | currency : 'PKR'}}</a></h6>
+              <h6>Order Price: <a>{{order.amount}}</a></h6>
               <hr>
               <h6>Order Description:</h6>
-              <p>asdasdasd</p>
+              <p>{{order.description}}</p>
               <hr>
               <h6>Order Delivery Time:</h6>
-              <p>sdasdasds</p>
+              <p>{{order.time_limit}}</p>
               <hr>
 
               <button type="button" class="btn btn-primary" (click)="onComplete()">Completed</button>

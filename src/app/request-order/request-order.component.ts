@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class RequestOrderComponent implements OnInit {
 
   orderRequests: any;
-  ordertitle: any;
+
   constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) {
   }
 
@@ -20,18 +20,12 @@ export class RequestOrderComponent implements OnInit {
 
 
   accept(id) {
-    this.http.post('http://localhost:3000/acceptOrder', {
-      'userid': localStorage.getItem('userid')
-      , 'orderid': id
-    })
-      .subscribe((data) => {
-        console.log(data);
-        this.orderRequests = data;
-      });
+    this.acceptOrDiscardOrder('accept', id);
 
   }
 
   discard(id) {
+    this.acceptOrDiscardOrder('discard', id);
 
   }
 
@@ -39,6 +33,18 @@ export class RequestOrderComponent implements OnInit {
     this.http.post('http://localhost:3000/getOrderRequests', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         this.orderRequests = data;
+      });
+  }
+
+  acceptOrDiscardOrder(request, orderid) {
+    this.http.post('http://localhost:3000/acceptOrder', {
+      'userid': localStorage.getItem('userid')
+      , 'orderid': orderid,
+      'requestType' : request
+    })
+      .subscribe((data) => {
+        this.fetchOrderRequests();
+
       });
   }
 }
