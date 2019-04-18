@@ -22,6 +22,8 @@ import {MyanswerComponent} from './myanswer/myanswer.component';
 import {ChatComponent} from './chat/chat.component';
 import {RequestOrderComponent} from './request-order/request-order.component';
 import {PendingOrdersComponent} from './pending-orders/pending-orders.component';
+import {BuyerOrderComponent} from './buyer-order/buyer-order.component';
+import {PaymentComponent} from './payment/payment.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -52,7 +54,10 @@ const routes: Routes = [
           {path: 'chat', component: ChatComponent},
           {path: 'add-gig', component: AddGigsComponent},
           {path: 'order-requests', component: RequestOrderComponent},
-          {path: 'pending-orders', component: PendingOrdersComponent}
+          {path: 'pending-orders', component: PendingOrdersComponent},
+          {path: 'my-orders', component: BuyerOrderComponent},
+          {path: 'payment', component: PaymentComponent}
+
         ]
       },
       {

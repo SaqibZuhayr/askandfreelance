@@ -40,6 +40,8 @@ import { PendingOrdersComponent } from './pending-orders/pending-orders.componen
 import { RequestOrderComponent } from './request-order/request-order.component';
 import { RightsidebarUserDetailComponent } from './rightsidebar-user-detail/rightsidebar-user-detail.component';
 import { RecommededQuestionComponent } from './recommeded-question/recommeded-question.component';
+import { BuyerOrderComponent } from './buyer-order/buyer-order.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -75,7 +77,9 @@ import { RecommededQuestionComponent } from './recommeded-question/recommeded-qu
     PendingOrdersComponent,
     RequestOrderComponent,
     RightsidebarUserDetailComponent,
-    RecommededQuestionComponent
+    RecommededQuestionComponent,
+    BuyerOrderComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

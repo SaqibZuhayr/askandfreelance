@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-2">
+    <app-user-profile-sidebar></app-user-profile-sidebar>
+  </div>
+  <div class="col-sm-7">
+    <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
+      <div class="form-row">
+        <label for="card-info">Card Info</label>
+        <div id="card-info" #cardInfo></div>
+
+        <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+      </div>
+
+      <button type="submit">Pay $777</button>
+    </form>
+  </div>
+  <div class="col-sm-3">
+    <app-rightsidebar-user-detail></app-rightsidebar-user-detail>
+  </div>
+</div>

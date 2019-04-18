@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "angular-stripe": "^5.0.0",
     "core-js": "^2.5.4",
     "ngx-auto-scroll": "^1.1.0",
     "ngx-pagination": "^3.2.1",
@@ -46,6 +47,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
+    "stripe-angular": "^0.3.2",
     "typescript": "~3.1.6"
   }
 }
