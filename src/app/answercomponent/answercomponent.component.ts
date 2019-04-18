@@ -56,17 +56,18 @@ export class AnswercomponentComponent implements OnInit {
       this.questionID = params.id;
       this.http.post('http://localhost:3000/answers', {'questionID': params.id}).subscribe((data) => {
         this.question = data;
-        // console.log(data);
+         console.log(data);
       });
     });
   }
 
   onBack() {
-    console.log('asdasd');
+   // console.log('asdasd');
     this.router.navigate(['/main']);
   }
 
   addScore(answerId) {
+    // console.log(answerId, 'answrerrer')
     this.ratingAnswer('add', answerId);
 
   }
@@ -87,7 +88,7 @@ export class AnswercomponentComponent implements OnInit {
     })
       .subscribe((data) => {
         console.log(data);
-        if(data['message']){
+        if (data['message']) {
           alert('You have already rated this answer');
         }
         this.fetchAnswer();
@@ -95,4 +96,21 @@ export class AnswercomponentComponent implements OnInit {
   }
 
 
+  approveAnswer(id, userid) {
+    if (!localStorage.getItem('userid')) {
+      alert('LOGIN REQUIRED');
+      return;
+    }
+    if ( userid !== this.userid) {
+      this.http.post('http://localhost:3000/approveAnswer', {
+         answerId: id, questionBy: this.userid,
+         answeredBy : userid
+      })
+        .subscribe((data) => {
+          console.log(data);
+          this.fetchAnswer();
+        });
+    }
+
+  }
 }

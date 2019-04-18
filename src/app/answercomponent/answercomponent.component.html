@@ -4,7 +4,7 @@
       <button type="button" class="float-right btn btn-primary" (click)="onBack()">Back</button>
     </div>
   </div>
-  <div class="col-sm-9">
+  <div class="col-sm-7">
     <div class="card">
       <div class="card-body">
 
@@ -24,7 +24,13 @@
                 <div class="col-md-1" style="text-align: center">
                   <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png" (click)="addScore(a.answer._id)">
                   <a >{{a.score}}</a>
-                  <img src="https://img.icons8.com/color/48/000000/ok.png">
+                  <img src="https://img.icons8.com/color/48/000000/checked-2.png"
+                       *ngIf="a.answer.approved; else notShow"(click)="approveAnswer(a.answer._id, a.answer.user_id)">
+
+                  <ng-template #notShow>
+                    <img src="https://img.icons8.com/color/48/000000/unchecked-checkbox.png"
+                         (click)="approveAnswer(a.answer._id, a.answer.user_id)">
+                  </ng-template>
                   <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png" (click)="subScore(a.answer._id)">
 
                 </div>
@@ -95,6 +101,9 @@
       </div>
     </div>
 
+  </div>
+  <div class="col-sm-3">
+    <app-recommeded-question [questionID]="questionID"></app-recommeded-question>
   </div>
 
 
