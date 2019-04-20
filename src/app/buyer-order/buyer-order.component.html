@@ -5,26 +5,34 @@
   <div class="col-sm-7">
     <div class="container">
       <div id="accordion">
-        <div class="card" >
+        <div class="card" *ngFor="let order of myorders.ordersAccepted" >
           <div class="card-header">
             <a class="card-link">
-              asd
+              {{order.title}}
             </a>
           </div>
           <div class="collapse show" data-parent="#accordion">
             <div class="card-body">
-              <h6>Order Price: <a>asd</a></h6>
+              <h6>Order Price: <a>{{order.amount}}</a></h6>
               <hr>
               <h6>Order Description:</h6>
-              <p>asd</p>
+              <p>{{order.description}}</p>
               <hr>
               <h6>Order Delivery Time:</h6>
-              <p>asd</p>
+              <p>{{order.time_limit}}</p>
               <hr>
 
-              <button type="button" class="btn btn-primary" routerLink="/main/userprofile/payment">Payment</button>
+              <button type="button" class="btn btn-primary" routerLink="/main/userprofile/payment/{{order.amount}}/{{order._id}}">Payment</button>
             </div>
           </div>
+        </div>
+        <div class="card">
+        <div  *ngFor="let order of myorders.ordersReceived">
+          <h6>{{order.orderName}}</h6>
+          <a href="http://localhost:3000{{order.orderFile}}">
+          <button (click)="download(order.orderFile)">Download</button>
+          </a>
+        </div>
         </div>
 
       </div>

@@ -1,6 +1,7 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -13,17 +14,35 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
   card: any;
   cardHandler = this.onChange.bind(this);
   error: string;
-  emailAddress: string;
+  amount: number;
+  orderid: any;
 
-  constructor(private cd: ChangeDetectorRef, private http: HttpClient) {
+  constructor(private cd: ChangeDetectorRef, public route: ActivatedRoute, private http: HttpClient, public router: Router) {
   }
 
   ngAfterViewInit() {
-    this.card = elements.create('card');
-    this.card.mount(this.cardInfo.nativeElement);
 
+    const style = {
+      base: {
+        lineHeight: '24px',
+        fontFamily: 'monospace',
+        fontSmoothing: 'antialiased',
+        fontSize: '19px',
+        '::placeholder': {
+          color: 'purple'
+        }
+      }
+    };
+
+    this.card = elements.create('card', {style});
+    this.card.mount(this.cardInfo.nativeElement);
     this.card.addEventListener('change', this.cardHandler);
+    this.route.params.subscribe((params) => {
+      this.amount = Number(params.amount);
+      this.orderid = params.oid;
+    });
   }
+
 
   ngOnDestroy() {
     this.card.removeEventListener('change', this.cardHandler);
@@ -39,28 +58,22 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
     this.cd.detectChanges();
   }
 
-  asd() {
-    window.open('https://connect.stripe.com/oauth/authorize?response_type=code&' +
-      'client_id=ca_32D88BD1qLklliziD7gYQvctJIhWBSQ7&scope=read_write&redirect_uri=https://saqibzuhayr.github.io/', '_blank');
-  }
-
   async onSubmit(form: NgForm) {
-    const {token, error} = await stripe.createToken(this.card, {
-      email: this.emailAddress
-    });
-    if (token) {
-      console.log(token.id);
-    }
-    this.http.post('http://localhost:3000/payment', {id: token.id})
-      .subscribe((data) => {
-        console.log(data);
-      });
+    const {token, error} = await stripe.createToken(this.card);
 
     if (error) {
       console.log('Something is wrong:', error);
     } else {
       console.log('Success!', token);
       // ...send the token to the your backend to process the charge
+      this.http.post('http://localhost:3000/payment', {id : token.id,
+      amount : this.amount,
+      orderid : this.orderid,
+        userid : localStorage.getItem('userid')
+      })
+        .subscribe((data) => {
+          console.log(data);
+        });
     }
   }
 }

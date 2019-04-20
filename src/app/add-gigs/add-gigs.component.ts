@@ -42,7 +42,7 @@ nform: FormGroup;
 
 
   onImagePicked(event: Event) {
-    const file = (event.target as HTMLInputElement).files[0];;
+    const file = (event.target as HTMLInputElement).files[0];
     this.nform.patchValue({ image: file});
     this.nform.get('image').updateValueAndValidity();
     const reader = new FileReader();

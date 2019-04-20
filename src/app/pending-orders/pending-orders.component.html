@@ -21,8 +21,13 @@
               <h6>Order Delivery Time:</h6>
               <p>{{order.time_limit}}</p>
               <hr>
-
-              <button type="button" class="btn btn-primary" (click)="onComplete()">Completed</button>
+              <h6>Order Status:</h6>
+              <p>Completed : {{order.completed}}</p>
+              <hr>
+              <button type="button" class="btn btn-primary" style="float: left" (click)="onComplete(order.userid,order._id)">Complete</button>
+              <input type="file"
+                     id="file"
+                     (change)="handleFileInput($event.target.files)">
               <button type="button" class="btn btn-primary" style="float: right" (click)="onCancel()">Cancel Order</button>
 
             </div>
