@@ -42,6 +42,7 @@ import { RightsidebarUserDetailComponent } from './rightsidebar-user-detail/righ
 import { RecommededQuestionComponent } from './recommeded-question/recommeded-question.component';
 import { BuyerOrderComponent } from './buyer-order/buyer-order.component';
 import { PaymentComponent } from './payment/payment.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { PaymentComponent } from './payment/payment.component';
     RightsidebarUserDetailComponent,
     RecommededQuestionComponent,
     BuyerOrderComponent,
-    PaymentComponent
+    PaymentComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,

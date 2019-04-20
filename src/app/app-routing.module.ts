@@ -24,6 +24,7 @@ import {RequestOrderComponent} from './request-order/request-order.component';
 import {PendingOrdersComponent} from './pending-orders/pending-orders.component';
 import {BuyerOrderComponent} from './buyer-order/buyer-order.component';
 import {PaymentComponent} from './payment/payment.component';
+import {UserAccountComponent} from './user-account/user-account.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -56,7 +57,9 @@ const routes: Routes = [
           {path: 'order-requests', component: RequestOrderComponent},
           {path: 'pending-orders', component: PendingOrdersComponent},
           {path: 'my-orders', component: BuyerOrderComponent},
+          {path: 'account', component: UserAccountComponent},
           {path: 'payment/:amount/:oid', component: PaymentComponent},
+
 
 
         ]
