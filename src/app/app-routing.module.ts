@@ -58,7 +58,7 @@ const routes: Routes = [
           {path: 'pending-orders', component: PendingOrdersComponent},
           {path: 'my-orders', component: BuyerOrderComponent},
           {path: 'account', component: UserAccountComponent},
-          {path: 'payment/:amount/:oid', component: PaymentComponent},
+          {path: 'payment/:amount/:oid/:gigid', component: PaymentComponent},
 
 
 

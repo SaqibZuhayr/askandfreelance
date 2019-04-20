@@ -16,6 +16,7 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
   error: string;
   amount: number;
   orderid: any;
+  gigid: any;
 
   constructor(private cd: ChangeDetectorRef, public route: ActivatedRoute, private http: HttpClient, public router: Router) {
   }
@@ -40,6 +41,7 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
     this.route.params.subscribe((params) => {
       this.amount = Number(params.amount);
       this.orderid = params.oid;
+      this.gigid = params.gigid;
     });
   }
 
@@ -69,6 +71,7 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
       this.http.post('http://localhost:3000/payment', {id : token.id,
       amount : this.amount,
       orderid : this.orderid,
+        gigid : this.gigid,
         userid : localStorage.getItem('userid')
       })
         .subscribe((data) => {

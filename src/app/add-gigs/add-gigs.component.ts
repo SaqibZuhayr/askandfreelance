@@ -37,7 +37,7 @@ nform: FormGroup;
       })
       .subscribe((data) => {
       console.log(data);
-    });;
+    });
   }
 
 
