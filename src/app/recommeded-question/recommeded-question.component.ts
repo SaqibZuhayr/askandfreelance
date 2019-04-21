@@ -11,7 +11,7 @@ import {computeStyle} from '@angular/animations/browser/src/util';
 })
 export class RecommededQuestionComponent implements OnInit {
   @Input() questionID: string;
-  suggestedQuestions = [];
+  suggestedQuestions: any;
   fetchedData: any;
   ans = '/main/answer/';
   constructor(public route: ActivatedRoute, public router: Router, private http: HttpClient) { }
@@ -28,14 +28,16 @@ export class RecommededQuestionComponent implements OnInit {
       'questionID': this.questionID
     })
       .subscribe((data) => {
-        this.fetchedData = data;
-        this.fetchedData.forEach(item => {
-          item.forEach(q => {
-            this.suggestedQuestions.push({'qid': q._id, 'question' : q.question});
-          });
-
-
-        });
+        console.log(data);
+        this.suggestedQuestions = data
+        // this.fetchedData = data;
+        // this.fetchedData.forEach(item => {
+        //   item.forEach(q => {
+        //     this.suggestedQuestions.push({'qid': q._id, 'question' : q.question});
+        //   });
+        //
+        //
+        // });
        // console.log(this.suggestedQuestions)
 
 

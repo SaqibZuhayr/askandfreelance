@@ -1,7 +1,7 @@
 <div class="list-group">
   <h6 class="list-group-item">Recommended Questions</h6>
   <div *ngFor="let q of suggestedQuestions">
-    <a class=" list-group-item" routerLink="{{ans}}{{q.qid}}">
+    <a class=" list-group-item" routerLink="{{ans}}{{q._id}}">
       {{q.question}}
     </a>
   </div>
