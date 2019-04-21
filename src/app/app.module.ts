@@ -43,6 +43,8 @@ import { RecommededQuestionComponent } from './recommeded-question/recommeded-qu
 import { BuyerOrderComponent } from './buyer-order/buyer-order.component';
 import { PaymentComponent } from './payment/payment.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { MyjobsComponent } from './myjobs/myjobs.component';
+import { MyjobsAppliedComponent } from './myjobs-applied/myjobs-applied.component';
 
 
 @NgModule({
@@ -81,7 +83,9 @@ import { UserAccountComponent } from './user-account/user-account.component';
     RecommededQuestionComponent,
     BuyerOrderComponent,
     PaymentComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    MyjobsComponent,
+    MyjobsAppliedComponent
   ],
   imports: [
     BrowserModule,

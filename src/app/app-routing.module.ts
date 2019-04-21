@@ -25,6 +25,8 @@ import {PendingOrdersComponent} from './pending-orders/pending-orders.component'
 import {BuyerOrderComponent} from './buyer-order/buyer-order.component';
 import {PaymentComponent} from './payment/payment.component';
 import {UserAccountComponent} from './user-account/user-account.component';
+import {MyjobsComponent} from './myjobs/myjobs.component';
+import {MyjobsAppliedComponent} from './myjobs-applied/myjobs-applied.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -59,7 +61,8 @@ const routes: Routes = [
           {path: 'my-orders', component: BuyerOrderComponent},
           {path: 'account', component: UserAccountComponent},
           {path: 'payment/:amount/:oid/:gigid', component: PaymentComponent},
-
+          {path: 'myjob', component: MyjobsComponent},
+          {path: 'myjob-applied', component: MyjobsAppliedComponent}
 
 
         ]

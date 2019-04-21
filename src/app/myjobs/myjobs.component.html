@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-2">
+    <app-jobs-sidebar></app-jobs-sidebar>
+  </div>
+  <div class="col-sm-7">
+    <div class="card">
+      <div class="row tags">
+        <div class="col-sm-11">
+          <button type="button" class="float-right btn btn-primary" (click)="post_job()">Post Job</button>
+          <h4>Jobs</h4>
+        </div>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let j of jobs" class="card border-info mb-3 ">
+          <div class="card ">
+            <div class="row">
+              <div class="col-md-3">
+                <p class="card-text small question">{{j.category}}</p>
+              </div>
+              <div class="col-md-9">
+                <p><a class="card-link">{{j.title}}</a></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-11">
+                <p>&nbsp;{{j.details}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10"></div>
+              <div class="col-sm-2 btn-margin">
+                <button routerLink="myjob-applied/{{j._id}}" type="button" class="float-right btn btn-primary">
+                  View Applications
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="list-group">
+        <h6 class="list-group-item">Trending Jobs</h6>
+        <a *ngFor="let j of jobtrending" class="list-group-item">{{j}}</a>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@
   <div class="col-sm-7">
     <div class="container">
       <div id="accordion">
-        <div class="card" *ngFor="let order of myorders.ordersAccepted" >
+        <div class="card" *ngFor="let order of myorders.ordersAccepted">
           <div class="card-header">
             <a class="card-link">
               {{order.title}}
@@ -22,17 +22,33 @@
               <p>{{order.time_limit}}</p>
               <hr>
 
-              <button type="button" class="btn btn-primary" routerLink="/main/userprofile/payment/{{order.amount}}/{{order._id}}/{{order.gig_id}}">Payment</button>
+              <button type="button" class="btn btn-primary"
+                      routerLink="/main/userprofile/payment/{{order.amount}}/{{order._id}}/{{order.gig_id}}">Payment
+              </button>
             </div>
           </div>
         </div>
         <div class="card">
-        <div  *ngFor="let order of myorders.ordersReceived">
-          <h6>{{order.orderName}}</h6>
-          <a href="http://localhost:3000{{order.orderFile}}">
-          <button (click)="download(order.orderFile)">Download</button>
-          </a>
-        </div>
+          <div *ngFor="let order of myorders.ordersReceived">
+            <h6>{{order.orderName}}</h6>
+            <a href="http://localhost:3000{{order.orderFile}}">
+              <button (click)="download(order.orderFile)">Download</button>
+            </a>
+          </div>
+          <div class="card col-sm-12">
+            <div class="card-body">
+              <form class="form-review" (submit)="onReview(onloginf)" #onloginf="ngForm">
+                <div class="input-group mb-3">
+                  <input type="text" id="reivew" class="form-control" name="review" placeholder="Write Comment"
+                         aria-describedby="basic-addon2">
+                  <div class="input-group-append" ngModel
+                     #reviewinput="ngModel">
+                    <button class="btn btn-outline-secondary" type="submit">Post</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
 
       </div>
