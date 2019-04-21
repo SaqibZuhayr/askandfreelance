@@ -6,4 +6,9 @@
 }
 .navbar{
   margin-bottom: 15px;
+  background: #31708F !important;
+  color: red !important;
+}
+.nav-link{
+  color: white !important;
 }

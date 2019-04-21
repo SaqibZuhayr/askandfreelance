@@ -14,13 +14,13 @@
     <div class="card">
       <div class="row tags">
         <div class="col-sm-12">
-          <button type="button" class="float-right btn btn-primary" (click)="post_question()">Ask Question</button>
+          <button type="button" style="background: #31708F;" class="float-right" (click)="post_question()">Ask Question</button>
           <h4>My Questions</h4>
         </div>
       </div>
       <div class="card-body">
         <div *ngFor="let q of Question | paginate: { itemsPerPage: 10, currentPage: p }" class="card border-info mb-3">
-          <div class="card">
+          <div class="card bbc">
             <div class="row">
               <div class="col-md-3">
                 <p class="card-text small question">{{q.user.username}}</p>
