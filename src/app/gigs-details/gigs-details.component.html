@@ -20,15 +20,10 @@
       </div>
       <div class="col-sm-12">
         <div class="card" style="margin-top: 15px;">
-          Reviews:
-          <div class="card-body">
-            <p>Name:</p>
-            <p>This is some text within a card body.</p>
-            <hr/>
-          </div>
-          <div class="card-body">
-            <p>Name:</p>
-            <p>This is some text within a card body.</p>
+          <h5>Reviews:</h5>
+          <div class="card-body" *ngFor="let review of Gig.reviews">
+            <p>{{review.client_id}}</p>
+            <p>{{review.comment}}</p>
             <hr/>
           </div>
         </div>

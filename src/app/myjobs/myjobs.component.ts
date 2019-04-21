@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-myjobs',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyjobsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public route: ActivatedRoute, public router: Router, private http: HttpClient) { }
+  myjobs: any;
   ngOnInit() {
+    this.getMyJobs();
+  }
+  getMyJobs() {
+    this.route.params.subscribe((params) => {
+      // console.log(params.id);
+      this.http.post('http://localhost:3000/myjobs', {'userid': params.id}).subscribe((data) => {
+        this.myjobs = data;
+        console.log(data);
+      });
+    });
   }
 
 }

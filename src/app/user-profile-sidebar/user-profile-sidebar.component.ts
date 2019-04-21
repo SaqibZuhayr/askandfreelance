@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class UserProfileSidebarComponent implements OnInit {
 
   constructor() { }
-
+  userid: any;
   ngOnInit() {
+    this.userid = localStorage.getItem('userid');
   }
 
 }

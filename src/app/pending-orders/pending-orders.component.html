@@ -24,7 +24,7 @@
               <h6>Order Status:</h6>
               <p>Completed : {{order.completed}}</p>
               <hr>
-              <button type="button" class="btn btn-primary" style="float: left" (click)="onComplete(order.userid,order._id)">Complete</button>
+              <button type="button" class="btn btn-primary" style="float: left" (click)="onComplete(order.userid,order._id,order.gig_id)">Complete</button>
               <input type="file"
                      id="file"
                      (change)="handleFileInput($event.target.files)">

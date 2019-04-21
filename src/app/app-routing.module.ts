@@ -61,8 +61,8 @@ const routes: Routes = [
           {path: 'my-orders', component: BuyerOrderComponent},
           {path: 'account', component: UserAccountComponent},
           {path: 'payment/:amount/:oid/:gigid', component: PaymentComponent},
-          {path: 'myjob', component: MyjobsComponent},
-          {path: 'myjob-applied', component: MyjobsAppliedComponent}
+          {path: 'myjob/:id', component: MyjobsComponent},
+          {path: 'myjob-applied/:id', component: MyjobsAppliedComponent}
 
 
         ]

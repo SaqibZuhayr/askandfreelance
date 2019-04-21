@@ -25,6 +25,11 @@ export class JobDetailsComponent implements OnInit {
   }
 
   apply_job() {
-    console.log('Goku');
+    this.http.post('http://localhost:3000/applyjob', {'jobID': this.job['_id'],
+    'userid': localStorage.getItem('userid')
+    }).subscribe((data) => {
+     // console.log(data);
+       alert(data['message']);
+    });
   }
 }

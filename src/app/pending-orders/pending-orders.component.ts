@@ -29,12 +29,13 @@ export class PendingOrdersComponent implements OnInit {
       });
   }
 
-  onComplete(id, orderid) {
+  onComplete(id, orderid, gigid) {
 
     if (this.fileToUpload) {
       this.formData.append('userid', id);
       this.formData.append('myid', localStorage.getItem('userid'));
       this.formData.append('orderid', orderid);
+      this.formData.append('gigid', gigid);
       this.http.post('http://localhost:3000/deliverOrder', this.formData)
         .subscribe((data) => {
           console.log(data);
