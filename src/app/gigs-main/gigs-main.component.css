@@ -1,4 +1,26 @@
 .card{
+  padding: 0px !important;
   margin-right:2%;
   margin-bottom: 10px;
+  border: hidden;
+  margin-left: 0px !important;
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.h5{
+  margin-left: 7px;
+}
+.list-group-item{
+  border: hidden;
+}
+.footer{
+  margin-top: 25px;
+}
+.tags{
+  margin-left: 5px;
+  margin-top: 15px;
+}
+.h4{
+  margin: 5px !important;
 }
