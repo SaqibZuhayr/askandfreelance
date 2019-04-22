@@ -3,68 +3,65 @@
     <app-user-profile-sidebar></app-user-profile-sidebar>
   </div>
   <div class="col-sm-7">
-    <div class="container">
-      <div>
-        <div class="card" *ngFor="let order of myorders.ordersAccepted">
-          <div class="card-header">
-            <a class="card-link">
-              {{order.title}}
-            </a>
-          </div>
-          <div class="collapse show">
-            <div class="card-body">
-              <h6>Order Price: <a>{{order.amount}}</a></h6>
-              <hr>
-              <h6>Order Description:</h6>
-              <p>{{order.description}}</p>
-              <hr>
-              <h6>Order Delivery Time:</h6>
-              <p>{{order.time_limit}}</p>
-              <hr>
+    <div *ngIf="myorders">
+      <div class="card" *ngFor="let order of myorders.ordersAccepted">
+        <div class="card-header">
+          <a class="card-link">
+            {{order.title}}
+          </a>
+        </div>
+        <div class="collapse show">
+          <div class="card-body">
+            <h6>Order Price: <a>{{order.amount}}</a></h6>
+            <hr>
+            <h6>Order Description:</h6>
+            <p>{{order.description}}</p>
+            <hr>
+            <h6>Order Delivery Time:</h6>
+            <p>{{order.time_limit}}</p>
+            <hr>
 
-              <button type="button" class="btn btn-primary"
-                      routerLink="/main/userprofile/payment/{{order.amount}}/{{order._id}}/{{order.gig_id}}">Payment
-              </button>
-            </div>
+            <button type="button" class="btn btn-primary"
+                    routerLink="/main/userprofile/payment/{{order.amount}}/{{order._id}}/{{order.gig_id}}">Payment
+            </button>
           </div>
         </div>
-        <h5 class="card-header">Orders Received :</h5>
-        <div class="card">
-          <div *ngFor="let order of myorders.ordersReceived">
-            <h6>{{order.orderName}}</h6>
-            <a href="http://localhost:3000{{order.orderFile}}">
-              <button (click)="download(order.orderFile)">Download</button>
-            </a>
-            <form class="form-review" (submit)="onReview(onloginf, order.gig_id, order.orderid)" #onloginf="ngForm">
-              <div class="input-group mb-3">
-                <input type="text" id="reivew" class="form-control" name="review" placeholder="Write Comment"
-                       aria-describedby="basic-addon2" ngModel
-                       #reviewinput="ngModel" [(ngModel)]="comment">
-                <div class="rate">
-                  <input type="radio" id="star5" name="rate" ngModel  value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" ngModel value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" ngModel value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" ngModel value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" ngModel value="1" />
-                  <label for="star1" title="text">1 star</label>
-                </div>
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="submit">Post</button>
-                </div>
+      </div>
+      <h5 class="card-header">Orders Received :</h5>
+      <div class="card">
+        <div *ngFor="let order of myorders.ordersReceived">
+          <h6>{{order.orderName}}</h6>
+          <a href="http://localhost:3000{{order.orderFile}}">
+            <button (click)="download(order.orderFile)">Download</button>
+          </a>
+          <form class="form-review" (submit)="onReview(onloginf, order.gig_id, order.orderid)" #onloginf="ngForm">
+            <div class="input-group mb-3">
+              <input type="text" id="reivew" class="form-control" name="review" placeholder="Write Comment"
+                     aria-describedby="basic-addon2" ngModel
+                     #reviewinput="ngModel" [(ngModel)]="comment">
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" ngModel value="5"/>
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" ngModel value="4"/>
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" ngModel value="3"/>
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" ngModel value="2"/>
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" ngModel value="1"/>
+                <label for="star1" title="text">1 star</label>
               </div>
-            </form>
-          </div>
-          <!--<div class="card col-sm-12">-->
-            <!--<div class="card-body">-->
-              <!---->
-            <!--</div>-->
-          <!--</div>-->
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Post</button>
+              </div>
+            </div>
+          </form>
         </div>
-
+        <!--<div class="card col-sm-12">-->
+        <!--<div class="card-body">-->
+        <!---->
+        <!--</div>-->
+        <!--</div>-->
       </div>
     </div>
   </div>

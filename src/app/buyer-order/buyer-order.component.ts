@@ -14,7 +14,7 @@ export class BuyerOrderComponent implements OnInit {
   }
 
   comment: any;
-  myorders: any;
+  myorders: any = undefined;
 
   ngOnInit() {
     this.comment = '';
