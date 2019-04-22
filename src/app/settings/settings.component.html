@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-sm-2">
+    <app-user-profile-sidebar></app-user-profile-sidebar>
+  </div>
+  <div class="col-sm-7">
+    <div class="row">
+      <div class="card col-sm-11">
+        <form class="form-update" (submit)="onupdate(onupdatef)" #onupdatef="ngForm">
+          <div class="form-label-group password-space">
+            <input type="text" id="firstname" class="form-control" placeholder="First Name" name="firstext" ngModel
+                   #firstinput="ngModel" required [(ngModel)]="firstname">
+          </div>
+          <div *ngIf="firstinput.invalid && firstinput.dirty && firstinput.touched"
+               class="alert alert-danger">
+            <div *ngIf="firstinput.errors.required">
+              First Name is required.
+            </div>
+          </div>
+
+          <div class="form-label-group password-space">
+            <input type="text" id="lastname" class="form-control" placeholder="Last Name" name="lasttext" ngModel
+                   #lastinput="ngModel" required [(ngModel)]="lastname">
+          </div>
+          <div *ngIf="lastinput.invalid && lastinput.dirty && lastinput.touched"
+               class="alert alert-danger">
+            <div *ngIf="lastinput.errors.required">
+              Last Name is required.
+            </div>
+          </div>
+
+          <div class="form-label-group password-space">
+            <input type="text" id="username" class="form-control" placeholder="Username" name="usertext" ngModel
+                   #userinput="ngModel" required [(ngModel)]="username">
+          </div>
+          <div *ngIf="userinput.invalid && userinput.dirty && userinput.touched"
+               class="alert alert-danger">
+            <div *ngIf="userinput.errors.required">
+              User Name is required.
+            </div>
+          </div>
+
+          <div class="form-label-group password-space">
+            <input type="email" id="email" class="form-control" placeholder="Email" name="emailtext" ngModel
+                   #emailinput="ngModel" required email [(ngModel)]="email">
+          </div>
+          <div *ngIf="emailinput.invalid && emailinput.dirty && emailinput.touched"
+               class="alert alert-danger">
+            <div *ngIf="emailinput.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="emailinput.errors.email">
+              Email is not valid.
+            </div>
+          </div>
+
+          <div class="form-label-group password-space">
+            <input type="password" id="password" class="form-control" placeholder="Password" name="passtext" ngModel
+                   #passinput="ngModel" required [(ngModel)]="password">
+          </div>
+          <div *ngIf="passinput.invalid && passinput.dirty && passinput.touched"
+               class="alert alert-danger">
+            <div *ngIf="passinput.errors.required">
+              Password is required.
+            </div>
+          </div>
+
+          <div class="form-label-group password-space">
+            <input type="password" id="repassword" class="form-control" placeholder="Confirm Password"
+                   name="repasstext" ngModel #repassinput="ngModel" required>
+          </div>
+          <div *ngIf="repassinput.invalid && repassinput.dirty && repassinput.touched"
+               class="alert alert-danger">
+            <div *ngIf="repassinput.errors.required">
+              Re password is required.
+            </div>
+          </div>
+
+
+          <button type="submit" class="btn btn-lg btn-info btn-block btn-color choice">Update</button>
+
+          <div style="clear: both"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <app-rightsidebar-user-detail></app-rightsidebar-user-detail>
+  </div>
+</div>

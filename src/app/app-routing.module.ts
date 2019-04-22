@@ -27,6 +27,7 @@ import {PaymentComponent} from './payment/payment.component';
 import {UserAccountComponent} from './user-account/user-account.component';
 import {MyjobsComponent} from './myjobs/myjobs.component';
 import {MyjobsAppliedComponent} from './myjobs-applied/myjobs-applied.component';
+import {SettingsComponent} from './settings/settings.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -62,7 +63,8 @@ const routes: Routes = [
           {path: 'account', component: UserAccountComponent},
           {path: 'payment/:amount/:oid/:gigid', component: PaymentComponent},
           {path: 'myjob/:id', component: MyjobsComponent},
-          {path: 'myjob-applied/:id', component: MyjobsAppliedComponent}
+          {path: 'myjob-applied/:id', component: MyjobsAppliedComponent},
+          {path: 'settings', component: SettingsComponent}
 
 
         ]

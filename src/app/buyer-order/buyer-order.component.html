@@ -40,6 +40,18 @@
                 <input type="text" id="reivew" class="form-control" name="review" placeholder="Write Comment"
                        aria-describedby="basic-addon2" ngModel
                        #reviewinput="ngModel" [(ngModel)]="comment">
+                <div class="rate">
+                  <input type="radio" id="star5" name="rate" ngModel  value="5" />
+                  <label for="star5" title="text">5 stars</label>
+                  <input type="radio" id="star4" name="rate" ngModel value="4" />
+                  <label for="star4" title="text">4 stars</label>
+                  <input type="radio" id="star3" name="rate" ngModel value="3" />
+                  <label for="star3" title="text">3 stars</label>
+                  <input type="radio" id="star2" name="rate" ngModel value="2" />
+                  <label for="star2" title="text">2 stars</label>
+                  <input type="radio" id="star1" name="rate" ngModel value="1" />
+                  <label for="star1" title="text">1 star</label>
+                </div>
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="submit">Post</button>
                 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
@@ -10,9 +10,12 @@ import {NgForm} from '@angular/forms';
 })
 export class BuyerOrderComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) { }
+  constructor(public route: ActivatedRoute, private http: HttpClient, public router: Router) {
+  }
+
   comment: any;
   myorders: any;
+
   ngOnInit() {
     this.comment = '';
     this.fetchMyOrders();
@@ -22,7 +25,7 @@ export class BuyerOrderComponent implements OnInit {
     this.http.post('http://localhost:3000/getMyOrders', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         this.myorders = data;
-        console.log(this.myorders)
+        console.log(this.myorders);
       });
   }
 
@@ -30,21 +33,25 @@ export class BuyerOrderComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    if (!localStorage.getItem('userid')){
+
+
+    if (!localStorage.getItem('userid')) {
       alert('LOGIN REQUIRED');
       return;
     }
+
+    // console.log(form.value);
     this.http.post('http://localhost:3000/addreview', {
-      order_id : orderid,
-      client_id : localStorage.getItem('userid'),
-      reviews_rating : 4,
-      comment : form.value.review,
-      gigid : gigid
+      order_id: orderid,
+      client_id: localStorage.getItem('userid'),
+      reviews_rating: form.value.rate,
+      comment: form.value.review,
+      gigid: gigid
     })
       .subscribe((data) => {
         this.comment = '';
         if (data['message']) {
-          alert('Review posted')
+          alert('Review posted');
         }
 
       });

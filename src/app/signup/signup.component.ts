@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 
@@ -11,23 +11,26 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
   ngOnInit() {
   }
 
   onsignup(form: NgForm) {
-   if (form.invalid) {
-     return;
-   }
+    if (form.invalid) {
+      return;
+    }
 
-    this.http.post('http://localhost:3000/user', {'first_name':  form.value.firstext,
-        'last_name': form.value.lasttext,
-        'email':   form.value.emailtext,
-        'username' : form.value.usertext,
-        'password' : form.value.passtext}).subscribe((data) => {
-          console.log(data);
-          this.router.navigate(['']);
+    this.http.post('http://localhost:3000/user', {
+      'first_name': form.value.firstext,
+      'last_name': form.value.lasttext,
+      'email': form.value.emailtext,
+      'username': form.value.usertext,
+      'password': form.value.passtext
+    }).subscribe((data) => {
+      console.log(data);
+      this.router.navigate(['']);
     });
   }
 
