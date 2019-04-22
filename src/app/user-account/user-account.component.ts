@@ -10,9 +10,9 @@ import {HttpClient} from '@angular/common/http';
 export class UserAccountComponent implements OnInit {
 
   constructor(public route: ActivatedRoute, public router: Router, private http: HttpClient) { }
-  userAccount: any;
+  userAccount: any = undefined;
   ngOnInit() {
-    this.getAccountDetails()
+    this.getAccountDetails();
   }
 
   getAccountDetails() {
@@ -21,7 +21,7 @@ export class UserAccountComponent implements OnInit {
     })
       .subscribe((data) => {
         this.userAccount = data;
-        console.log(this.userAccount)
+        console.log(this.userAccount);
       });
   }
 

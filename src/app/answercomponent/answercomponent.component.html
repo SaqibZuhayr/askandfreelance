@@ -1,14 +1,15 @@
 <div class="row">
   <div class="col-sm-2">
-    <div class="card">
-      <button type="button" class="float-right btn btn-primary" (click)="onBack()">Back</button>
+    <div>
+      <button type="button" style="background-color: #31708F" class="float-right btn btn-primary" (click)="onBack()">
+        Back
+      </button>
     </div>
   </div>
   <div class="col-sm-7">
     <div class="card">
       <div class="card-body">
-
-        <div class="card border-info mb-3">
+        <div class="card mb-3">
           <div class="card">
             <div class="row">
               <div class="col-md-3">
@@ -19,19 +20,21 @@
                 <p><a href="#" class="card-link">{{question.question}}</a></p>
               </div>
             </div>
-            <div *ngFor="let a of question.answers" class="card card-body">
+            <div *ngFor="let a of question.answers" class="card card-body" style="margin-right: 8px;margin-left: 8px;">
               <div class="row">
                 <div class="col-md-1" style="text-align: center">
-                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png" (click)="addScore(a.answer._id)">
-                  <a >{{a.score}}</a>
+                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-up.png"
+                       (click)="addScore(a.answer._id)">
+                  <a>{{a.score}}</a>
                   <img src="https://img.icons8.com/color/48/000000/checked-2.png"
-                       *ngIf="a.answer.approved; else notShow"(click)="approveAnswer(a.answer._id, a.answer.user_id)">
+                       *ngIf="a.answer.approved; else notShow" (click)="approveAnswer(a.answer._id, a.answer.user_id)">
 
                   <ng-template #notShow>
                     <img src="https://img.icons8.com/color/48/000000/unchecked-checkbox.png"
                          (click)="approveAnswer(a.answer._id, a.answer.user_id)">
                   </ng-template>
-                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png" (click)="subScore(a.answer._id)">
+                  <img class="image" src="https://img.icons8.com/ios/50/000000/sort-down.png"
+                       (click)="subScore(a.answer._id)">
 
                 </div>
                 <div class="col-md-10">
@@ -74,29 +77,26 @@
         </div>
       </div>
     </div>
-    <div class="card abc">
+    <div class="card">
       <div class="card-body">
-        <div class="card border-info mb-3">
-
-          <div class="row">
-            <div class="col-sm-12">
-              <form class="form-postAnswer" (submit)="onPostAnswer(onPostAnswerF)" #onPostAnswerF="ngForm">
-                <div class="form-group">
+        <div class="row">
+          <div class="col-sm-12">
+            <form class="form-postAnswer" (submit)="onPostAnswer(onPostAnswerF)" #onPostAnswerF="ngForm">
+              <div class="form-group">
                 <textarea class="form-control" rows="7" id="comment" placeholder="Enter Answer" name="answer" autofocus
                           ngModel
                           #answerinput="ngModel" required></textarea>
+              </div>
+              <div *ngIf="answerinput.invalid && answerinput.dirty && answerinput.touched"
+                   class="alert alert-danger">
+                <div *ngIf="answerinput.errors.required">
+                  Answer is required.
                 </div>
-                <div *ngIf="answerinput.invalid && answerinput.dirty && answerinput.touched"
-                     class="alert alert-danger">
-                  <div *ngIf="answerinput.errors.required">
-                    Answer is required.
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
+              </div>
+              <button style="background-color: #31708F" type="submit" class="btn btn-primary float-right">Submit
+              </button>
+            </form>
           </div>
-
         </div>
       </div>
     </div>

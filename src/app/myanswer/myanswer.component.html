@@ -1,36 +1,46 @@
-<div class="card">
-  <div class="card-body">
-    <h5>My Answers</h5>
-    <hr>
-    <div *ngFor="let a of userAnswers" class="card card-answer border-info mb-3">
-      <div class="card card-body">
-        <div class="row">
-          <div class="col-md-3">
-            <p class="card-text small question">{{a.questionObj.askedBy}}</p>
-          </div>
-          <div class="col-md-9">
-            <p><a href="#" class="card-link">{{a.questionObj.question}}</a></p>
-          </div>
-        </div>
-        <div class="card-body">
-          <hr>
-          <div class="row">
-            <div class="col-md-3">
-              <p class="card-text small">{{a.answerObj.answeredBy}}</p>
+<div class="row">
+  <div class="col-sm-2">
+    <app-user-profile-sidebar></app-user-profile-sidebar>
+  </div>
+  <div class="col-sm-7">
+    <div class="card">
+      <div class="card-body">
+        <h5>My Answers</h5>
+        <hr>
+        <div *ngFor="let a of userAnswers" class="card card-answer border-info mb-3">
+          <div class="card card-body">
+            <div class="row">
+              <div class="col-md-3">
+                <p class="card-text small question">{{a.questionObj.askedBy}}</p>
+              </div>
+              <div class="col-md-9">
+                <p><a href="#" class="card-link">{{a.questionObj.question}}</a></p>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p><a href="#" class="card-link">{{a.answerObj.answer}}.</a></p>
-            </div>
-          </div>
-          <hr>
+            <div class="card-body">
+              <hr>
+              <div class="row">
+                <div class="col-md-3">
+                  <p class="card-text small">{{a.answerObj.answeredBy}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p><a href="#" class="card-link">{{a.answerObj.answer}}.</a></p>
+                </div>
+              </div>
+              <hr>
 
-        </div>
-        <div class="col-sm-12 small">
-          <a href="#" class="card-link float-right">{{a.questionObj.category}}</a>
+            </div>
+            <div class="col-sm-12 small">
+              <a href="#" class="card-link float-right">{{a.questionObj.category}}</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-sm-3">
+    <app-rightsidebar-user-detail></app-rightsidebar-user-detail>
   </div>
 </div>

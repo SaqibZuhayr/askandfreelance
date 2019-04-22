@@ -1,16 +1,50 @@
-.card-body{
+.card-body {
   margin-bottom: 5px;
 
 }
-.question{
+
+.question {
   margin-left: 5px;
 }
-.border-info{
+
+.border-info {
   padding: 5px;
 }
-.abc{
-margin-top: 5px;
+
+.abc {
+  margin-top: 5px;
 }
+
 .image:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.question {
+  margin-left: 5px;
+}
+
+.tags {
+  margin: 5px;
+}
+
+.btn-primary {
+  margin-top: 5px;
+}
+
+.paginator {
+  background: #31708F !important;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bbc {
+  padding: 15px;
+}
+
+.form-control {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
