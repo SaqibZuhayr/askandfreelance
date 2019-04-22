@@ -6,11 +6,12 @@
           {{user.username}} Details:
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Total Gigs : <span>{{user.gigs.length}}</span></li>
+          <li routerLink="/main/userprofile/gigs-applied/{{user._id}}" class="list-group-item">Total Gigs : <span>{{user.gigs.length}}</span></li>
           <li class="list-group-item">Orders Completed : <span>{{user.ordersAccepted.length}}</span></li>
           <li class="list-group-item">Average Gigs Rating : <span></span></li>
           <li class="list-group-item">Questions Posted : <span>{{user.questions.length}}</span></li>
           <li class="list-group-item">Answer Posted : <span>{{user.answers.length}}</span></li>
+          <li class="list-group-item">Email : <span>{{user.email}}</span></li>
         </ul>
       </div>
     </div>

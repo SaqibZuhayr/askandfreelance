@@ -46,6 +46,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { MyjobsComponent } from './myjobs/myjobs.component';
 import { MyjobsAppliedComponent } from './myjobs-applied/myjobs-applied.component';
 import { SettingsComponent } from './settings/settings.component';
+import { GigsAppliedComponent } from './gigs-applied/gigs-applied.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { SettingsComponent } from './settings/settings.component';
     UserAccountComponent,
     MyjobsComponent,
     MyjobsAppliedComponent,
-    SettingsComponent
+    SettingsComponent,
+    GigsAppliedComponent
   ],
   imports: [
     BrowserModule,
