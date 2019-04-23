@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-post-job',
@@ -26,12 +27,12 @@ export class PostJobComponent implements OnInit {
       return;
     }
     if (!localStorage.getItem('userid')){
-      alert('LOGIN REQUIRED');
+      swal("Login Required", "", "error");
       return;
     }
     this.http.post('http://localhost:3000/postjobs', {'job':  form.value, 'userid': this.userid })
       .subscribe((data) => {
-        console.log(data);
+        swal("Posted", "Job is posted", "success");
         this.route.navigate(['main/jobs']);
       });
     console.log(form.value);
