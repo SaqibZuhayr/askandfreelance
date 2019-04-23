@@ -1,7 +1,10 @@
 <div class="row">
-  <div class="card col-sm-11">
+  <div class="col-sm-2">
+    <app-user-profile-sidebar></app-user-profile-sidebar>
+  </div>
+  <div class="card col-sm-7">
     <form class="form" (submit)="onAddGig(onAddGigF)" #onAddGigF="ngForm">
-      <button type="button" class="float-right btn btn-primary" (click)="onBack()">Back</button>
+      <button type="button" style="background-color: #31708F" class="float-right btn btn-primary" (click)="onBack()">Back</button>
       <br>
       <h5>Add New Gig</h5>
       <hr>
@@ -27,25 +30,17 @@
       </div>
       <div class="form-group balance">
         <div class="row">
-          <div class="col-sm-7">
-            <input class="form-control" id="gig_photo" placeholder="Select Gig Photo" name="gig_photo" autofocus ngModel
-                   #gig_photo="ngModel" required>
-          </div>
           <form [formGroup]="nform">
             <div>
-              <button type="button" class="btn btn-primary" (click)="filepicker.click()">Add Image</button>
-              <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;" accept="image/*">
+              <button type="button" class="btn btn-primary" style="background-color: #31708F; margin-left: 15px;" (click)="filepicker.click()">Add Image</button>
+              <input type="file" #filepicker (change)="onImagePicked($event)" style="visibility: hidden;"
+                     accept="image/*">
             </div>
             <div *ngIf="imagePreview !== '' && imagePreview && nform.get('image').valid">
               <img [src]="imagePreview" [alt]="nform.value.title">
             </div>
           </form>
           <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-        </div>
-      </div>
-      <div *ngIf="gig_photo.invalid && gig_photo.dirty && gig_photo.touched" class="alert alert-danger">
-        <div *ngIf="gig_photo.errors.required">
-          Gig photo is required.
         </div>
       </div>
       <div class="form-group balance">
@@ -58,9 +53,11 @@
           Gig Rate is required.
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" style="background-color: #31708F" class="btn btn-primary">Submit</button>
 
     </form>
   </div>
-
+  <div class="col-sm-3">
+    <app-rightsidebar-user-detail></app-rightsidebar-user-detail>
+  </div>
 </div>

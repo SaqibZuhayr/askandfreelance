@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Location} from '@angular/common';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-postquestion',
@@ -24,7 +25,7 @@ export class PostquestionComponent implements OnInit {
 
   onPostQuestion(form: NgForm) {
     if (form.invalid) {
-      return;
+      swal("Invalid Values", "", "error");
     }
     if (!localStorage.getItem('userid')) {
       swal("Login Required", "", "error");

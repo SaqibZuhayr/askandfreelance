@@ -4,12 +4,10 @@
   </div>
   <div class="col-sm-7">
     <div *ngIf="myorders">
-      <div class="card" *ngFor="let order of myorders.ordersAccepted">
-        <div class="card-header">
+      <div class="card col-sm-12" *ngFor="let order of myorders.ordersAccepted">
           <a class="card-link">
             {{order.title}}
           </a>
-        </div>
         <div class="collapse show">
           <div class="card-body">
             <h6>Order Price: <a>{{order.amount}}</a></h6>
