@@ -13,7 +13,7 @@ export class AnswercomponentComponent implements OnInit {
 
 
   questionID: string;
-  question: any;
+  question: any = undefined;
   userid = ' ';
   username = ' ';
 
@@ -32,7 +32,7 @@ export class AnswercomponentComponent implements OnInit {
       return;
     }
     if (!localStorage.getItem('userid')) {
-      alert('LOGIN REQUIRED');
+      swal("Login Required", "", "error");
       return;
     }
     console.log('answer');

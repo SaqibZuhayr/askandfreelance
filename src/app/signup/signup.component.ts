@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
 
   onsignup(form: NgForm) {
     if (form.invalid) {
-      return;
+      swal("Signup", "UnSuccessful", "error");
     }
 
     this.http.post('http://localhost:3000/user', {
@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
       'username': form.value.usertext,
       'password': form.value.passtext
     }).subscribe((data) => {
-      console.log(data);
+      swal("Signup", "Succesful", "success");
       this.router.navigate(['']);
     });
   }

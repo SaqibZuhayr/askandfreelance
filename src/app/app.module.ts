@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxAutoScrollModule } from 'ngx-auto-scroll';
 import {NgxPaginationModule} from 'ngx-pagination';
-
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -87,7 +86,7 @@ import { SettingsComponent } from './settings/settings.component';
     UserAccountComponent,
     MyjobsComponent,
     MyjobsAppliedComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

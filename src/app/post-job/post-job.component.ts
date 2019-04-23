@@ -26,12 +26,12 @@ export class PostJobComponent implements OnInit {
       return;
     }
     if (!localStorage.getItem('userid')){
-      alert('LOGIN REQUIRED');
+      swal("Login Required", "", "error");
       return;
     }
     this.http.post('http://localhost:3000/postjobs', {'job':  form.value, 'userid': this.userid })
       .subscribe((data) => {
-        console.log(data);
+        swal("Posted", "Job is posted", "success");
         this.route.navigate(['main/jobs']);
       });
     console.log(form.value);

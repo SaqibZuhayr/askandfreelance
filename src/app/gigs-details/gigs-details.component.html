@@ -1,7 +1,7 @@
 <div class="card">
   <div class="col-sm-12">
-    <div class="row">
-      <div class="col-sm-4 main">
+    <div class="row" *ngIf="Gig">
+      <div class="col-sm-4 main" >
         <img class="card-img-top" style="width: 15rem;" src="{{Gig.photo}}" alt="Card image">
         <div class="">
           <h5 class="card-title"><a routerLink="gig_details">Title: {{Gig.title}}</a></h5>
@@ -11,7 +11,7 @@
         <h6>Description:</h6>
         <p>{{Gig.description}}</p>
       </div>
-      <div class="card col-sm-7 main">
+      <div class="card col-sm-7 main" *ngIf="Gig.reviews">
         <div style="margin-top: 15px; margin-left: 15px">
           <h5>Reviews:</h5>
           <hr/>

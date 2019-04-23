@@ -1,7 +1,7 @@
 <div class="card row">
   <div class="col-sm-12">
     <h4 >Gigs</h4>
-    <div class="row">
+    <div class="row" *ngIf="gigs">
       <div class="tags" align="center" style="" *ngFor="let g of gigs | paginate: { itemsPerPage: 9, currentPage: p }">
         <div class="col-sm-3">
           <div class="card" style="width:12rem;">
