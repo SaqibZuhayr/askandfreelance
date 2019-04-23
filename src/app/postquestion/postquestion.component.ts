@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Location} from '@angular/common';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-postquestion',
@@ -27,8 +28,7 @@ export class PostquestionComponent implements OnInit {
       return;
     }
     if (!localStorage.getItem('userid')) {
-      alert('LOGIN REQUIRED');
-      return;
+      swal("Login Required", "", "error");
     }
     console.log('postQuestion');
     console.log(this.userid);
@@ -36,7 +36,7 @@ export class PostquestionComponent implements OnInit {
       'category': form.value.title,
       'question': form.value.question, 'userid': this.userid, 'askedBy': this.username
     }).subscribe((data) => {
-      console.log(data);
+      swal("Question Added", "", "success");
       this.route.navigate(['main']);
     });
   }
