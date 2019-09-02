@@ -46,6 +46,7 @@ import { MyjobsComponent } from './myjobs/myjobs.component';
 import { MyjobsAppliedComponent } from './myjobs-applied/myjobs-applied.component';
 import { SettingsComponent } from './settings/settings.component';
 import { GigsAppliedComponent } from './gigs-applied/gigs-applied.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { GigsAppliedComponent } from './gigs-applied/gigs-applied.component';
     MyjobsComponent,
     MyjobsAppliedComponent,
     SettingsComponent,
-    GigsAppliedComponent
+    GigsAppliedComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

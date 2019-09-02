@@ -30,7 +30,7 @@ export class SettingsComponent implements OnInit {
       return;
     }
     if (form.value.passtext === form.value.repasstext) {
-      this.http.post('http://localhost:3000/updateprofile', {'userid': this.userid,
+      this.http.post('https://stark-chamber-32733.herokuapp.com/updateprofile', {'userid': this.userid,
         'userdetail': form.value
       }).subscribe((data) => {
         if (data['message']) {
@@ -46,7 +46,7 @@ export class SettingsComponent implements OnInit {
     if (!this.userid) {
       return;
     }
-    this.http.post('http://localhost:3000/userdetails', {'userid': localStorage.getItem('userid'),
+    this.http.post('https://stark-chamber-32733.herokuapp.com/userdetails', {'userid': localStorage.getItem('userid'),
     }).subscribe((data) => {
       console.log(data)
       this.user = data;

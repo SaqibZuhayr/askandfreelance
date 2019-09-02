@@ -68,7 +68,7 @@ export class PaymentComponent implements AfterViewInit, OnDestroy {
     } else {
       console.log('Success!', token);
       // ...send the token to the your backend to process the charge
-      this.http.post('http://localhost:3000/payment', {id : token.id,
+      this.http.post('https://stark-chamber-32733.herokuapp.com/payment', {id : token.id,
       amount : this.amount,
       orderid : this.orderid,
         gigid : this.gigid,

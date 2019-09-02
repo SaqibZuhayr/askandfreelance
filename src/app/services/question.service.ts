@@ -13,7 +13,7 @@ export class QuestionService {
   constructor(private http: HttpClient) { }
 
   getQuestions(tag, id, search) {
-    this.http.post('http://localhost:3000/questions', {tag, id, search}).subscribe((data) => {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/questions', {tag, id, search}).subscribe((data) => {
           this.questions.next(data);
           console.log(this.questions);
     });

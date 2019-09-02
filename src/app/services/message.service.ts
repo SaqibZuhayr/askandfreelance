@@ -11,7 +11,7 @@ export class MessageService {
   }
 
   SendMessage(senderId, senderName, receiverId, receiverName, message): Observable<any> {
-    return this.http.post(`http://localhost:3000/chat`, {
+    return this.http.post(`https://stark-chamber-32733.herokuapp.com/chat`, {
       senderId,
       senderName,
       receiverId,
@@ -21,7 +21,7 @@ export class MessageService {
   }
 
   GetMessage(senderId, receiverId): Observable<any> {
-    return this.http.post(`http://localhost:3000/getchat`, {
+    return this.http.post(`https://stark-chamber-32733.herokuapp.com/getchat`, {
       senderId,
       receiverId,
     });

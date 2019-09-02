@@ -21,7 +21,7 @@ export class MessageComponent implements OnInit {
   typing = false;
 
   constructor(private msgService: MessageService, private route: ActivatedRoute) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://stark-chamber-32733.herokuapp.com');
   }
 
   ngOnInit() {

@@ -21,7 +21,7 @@ export class GigsAppliedComponent implements OnInit {
     this.route.params.subscribe((params) => {
      // console.log(params.id);
       this.userid = params.id;
-      this.http.post('http://localhost:3000/fetchgigs', {'userid': this.userid}).subscribe((data) => {
+      this.http.post('https://stark-chamber-32733.herokuapp.com/fetchgigs', {'userid': this.userid}).subscribe((data) => {
         this.gigs = data;
         console.log(data);
       });

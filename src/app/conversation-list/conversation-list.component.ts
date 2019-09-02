@@ -20,7 +20,7 @@ export class ConversationListComponent implements OnInit {
   }
 
   fetchConversations() {
-    this.http.post('http://localhost:3000/getConversations', {'userid': localStorage.getItem('userid')})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/getConversations', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         this.conversations = data;
         console.log(data);

@@ -17,7 +17,7 @@ export class MyjobsAppliedComponent implements OnInit {
   viewApplications() {
     this.route.params.subscribe((params) => {
       console.log(params.id);
-      this.http.post('http://localhost:3000/getapplicants', {'jobID': params.id}).subscribe((data) => {
+      this.http.post('https://stark-chamber-32733.herokuapp.com/getapplicants', {'jobID': params.id}).subscribe((data) => {
         this.applicants = data;
         console.log(data);
       });

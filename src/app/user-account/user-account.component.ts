@@ -16,7 +16,7 @@ export class UserAccountComponent implements OnInit {
   }
 
   getAccountDetails() {
-    this.http.post('http://localhost:3000/getAccountDetails', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/getAccountDetails', {
       'userid': localStorage.getItem('userid')
     })
       .subscribe((data) => {

@@ -2,7 +2,10 @@
   <div class="col-sm-2">
     <app-user-profile-sidebar></app-user-profile-sidebar>
   </div>
-  <div class="col-sm-7 col-offset-sm-3">
+  <div class="col-sm-7" *ngIf="loader;">
+    <app-loader></app-loader>
+  </div>
+  <div class="col-sm-7 col-offset-sm-3" *ngIf="!loader">
     <div class="card">
       <div class="row tags">
         <div class="col-sm-12">

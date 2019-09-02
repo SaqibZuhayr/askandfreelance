@@ -17,7 +17,7 @@ export class MyjobsComponent implements OnInit {
   getMyJobs() {
     this.route.params.subscribe((params) => {
       // console.log(params.id);
-      this.http.post('http://localhost:3000/myjobs', {'userid': params.id}).subscribe((data) => {
+      this.http.post('https://stark-chamber-32733.herokuapp.com/myjobs', {'userid': params.id}).subscribe((data) => {
         this.myjobs = data;
         console.log(data);
       });

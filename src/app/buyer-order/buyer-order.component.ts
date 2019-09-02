@@ -22,7 +22,7 @@ export class BuyerOrderComponent implements OnInit {
   }
 
   fetchMyOrders() {
-    this.http.post('http://localhost:3000/getMyOrders', {'userid': localStorage.getItem('userid')})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/getMyOrders', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         this.myorders = data;
         console.log(this.myorders);
@@ -41,7 +41,7 @@ export class BuyerOrderComponent implements OnInit {
     }
 
     // console.log(form.value);
-    this.http.post('http://localhost:3000/addreview', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/addreview', {
       order_id: orderid,
       client_id: localStorage.getItem('userid'),
       reviews_rating: form.value.rate,

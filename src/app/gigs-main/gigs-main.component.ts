@@ -15,7 +15,7 @@ export class GigsMainComponent implements OnInit {
     this.fetchGigs();
   }
   fetchGigs() {
-    this.http.post('http://localhost:3000/fetchgigs', {})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/fetchgigs', {})
       .subscribe((data) => {
         console.log(data);
        this.gigs = data;

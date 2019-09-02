@@ -16,7 +16,7 @@ export class MyanswerComponent implements OnInit {
   }
 
   fetchUserAnswers(){
-    this.http.post('http://localhost:3000/useranswers', {'userid': localStorage.getItem('userid')})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/useranswers', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
       console.log(data);
       this.userAnswers = data;

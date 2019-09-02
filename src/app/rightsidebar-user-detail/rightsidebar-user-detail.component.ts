@@ -17,7 +17,7 @@ export class RightsidebarUserDetailComponent implements OnInit {
     this.getDetails();
   }
   getDetails() {
-    this.http.post('http://localhost:3000/userdetails', {'userid': this.userid})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/userdetails', {'userid': this.userid})
       .subscribe((data) => {
       this.userDetails = data;
     });

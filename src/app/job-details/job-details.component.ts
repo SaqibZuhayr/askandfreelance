@@ -14,7 +14,7 @@ export class JobDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe( (params) => {
       console.log(params.id);
-      this.http.post('http://localhost:3000/jobdetails', {'jobID': params.id}).subscribe((data) => {
+      this.http.post('https://stark-chamber-32733.herokuapp.com/jobdetails', {'jobID': params.id}).subscribe((data) => {
         console.log(data);
         this.job = data;
         // console.log(this.answers);
@@ -25,7 +25,7 @@ export class JobDetailsComponent implements OnInit {
   }
 
   apply_job() {
-    this.http.post('http://localhost:3000/applyjob', {'jobID': this.job['_id'],
+    this.http.post('https://stark-chamber-32733.herokuapp.com/applyjob', {'jobID': this.job['_id'],
     'userid': localStorage.getItem('userid')
     }).subscribe((data) => {
      // console.log(data);

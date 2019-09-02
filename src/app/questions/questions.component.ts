@@ -19,6 +19,7 @@ export class QuestionsComponent implements OnInit {
   ans;
   checkbool = false;
   bool = false;
+  loader = true;
 
   constructor(private http: HttpClient, private router: Router, private question: QuestionService, private location: Location) {
   }
@@ -30,6 +31,7 @@ export class QuestionsComponent implements OnInit {
       this.question.getQuestions(undefined, undefined,undefined);
       this.question.questionObservable.subscribe(value => {
         this.Question = value;
+        this.loader = false;
         this.ans = 'answer/';
       });
     } else {

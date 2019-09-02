@@ -23,7 +23,7 @@ export class PendingOrdersComponent implements OnInit {
   }
 
   getPendingOrders(){
-    this.http.post('http://localhost:3000/getPendingOrders', {'userid': localStorage.getItem('userid')})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/getPendingOrders', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         this.pendingOrders = data;
       });
@@ -36,7 +36,7 @@ export class PendingOrdersComponent implements OnInit {
       this.formData.append('myid', localStorage.getItem('userid'));
       this.formData.append('orderid', orderid);
       this.formData.append('gigid', gigid);
-      this.http.post('http://localhost:3000/deliverOrder', this.formData)
+      this.http.post('https://stark-chamber-32733.herokuapp.com/deliverOrder', this.formData)
         .subscribe((data) => {
           console.log(data);
           this.getPendingOrders();

@@ -24,7 +24,7 @@ export class UserProfileDetailsComponent implements OnInit {
   }
 
   fetchUserGigs() {
-    this.http.post('http://localhost:3000/fetchgigs', {'userid': localStorage.getItem('userid')})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/fetchgigs', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         console.log(data);
         this.userGigs = data;

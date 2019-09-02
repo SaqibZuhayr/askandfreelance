@@ -36,7 +36,7 @@ export class AnswercomponentComponent implements OnInit {
       return;
     }
     console.log('answer');
-    this.http.post('http://localhost:3000/postanswer', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/postanswer', {
       'answer': form.value.answer,
       'questionID': this.question['questionid'],
       'userid': this.userid,
@@ -54,7 +54,7 @@ export class AnswercomponentComponent implements OnInit {
     this.route.params.subscribe((params) => {
       console.log(params.id);
       this.questionID = params.id;
-      this.http.post('http://localhost:3000/answers', {'questionID': params.id}).subscribe((data) => {
+      this.http.post('https://stark-chamber-32733.herokuapp.com/answers', {'questionID': params.id}).subscribe((data) => {
         this.question = data;
          console.log(data);
       });
@@ -82,7 +82,7 @@ export class AnswercomponentComponent implements OnInit {
       alert('LOGIN REQUIRED');
       return;
     }
-    this.http.post('http://localhost:3000/rateanswer', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/rateanswer', {
       rate: rate, answerId: answerId, qId: this.questionID
       , userid: this.userid
     })
@@ -102,7 +102,7 @@ export class AnswercomponentComponent implements OnInit {
       return;
     }
     if ( userid !== this.userid) {
-      this.http.post('http://localhost:3000/approveAnswer', {
+      this.http.post('https://stark-chamber-32733.herokuapp.com/approveAnswer', {
          answerId: id, questionBy: this.userid,
          answeredBy : userid
       })

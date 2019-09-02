@@ -18,7 +18,7 @@ export class SidebarFreelanceComponent implements OnInit {
   }
 
   getFreelanceCategories() {
-    this.http.get('http://localhost:3000/getfreelancetags').subscribe((data) => {
+    this.http.get('https://stark-chamber-32733.herokuapp.com/getfreelancetags').subscribe((data) => {
       this.freelancetags = data;
     });
   }

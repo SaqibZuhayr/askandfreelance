@@ -27,7 +27,7 @@ export class TrendingtagsquestionComponent implements OnInit {
   }
 
   getQuestionCategories() {
-    this.http.get('http://localhost:3000/getquestiontags').subscribe((data) => {
+    this.http.get('https://stark-chamber-32733.herokuapp.com/getquestiontags').subscribe((data) => {
       this.questiontags = data;
     });
   }

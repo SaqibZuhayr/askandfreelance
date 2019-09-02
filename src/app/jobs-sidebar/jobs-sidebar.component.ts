@@ -17,7 +17,7 @@ export class JobsSidebarComponent implements OnInit {
   }
 
   getTrendingJobs() {
-    this.http.get('http://localhost:3000/getjobtags').subscribe((data) => {
+    this.http.get('https://stark-chamber-32733.herokuapp.com/getjobtags').subscribe((data) => {
       this.jobtags = data ;
     });
 

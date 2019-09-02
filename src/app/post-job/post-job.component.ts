@@ -30,7 +30,7 @@ export class PostJobComponent implements OnInit {
       swal("Login Required", "", "error");
       return;
     }
-    this.http.post('http://localhost:3000/postjobs', {'job':  form.value, 'userid': this.userid })
+    this.http.post('https://stark-chamber-32733.herokuapp.com/postjobs', {'job':  form.value, 'userid': this.userid })
       .subscribe((data) => {
         swal("Posted", "Job is posted", "success");
         this.route.navigate(['main/jobs']);

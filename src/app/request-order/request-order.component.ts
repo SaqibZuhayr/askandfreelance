@@ -30,14 +30,14 @@ export class RequestOrderComponent implements OnInit {
   }
 
   fetchOrderRequests() {
-    this.http.post('http://localhost:3000/getOrderRequests', {'userid': localStorage.getItem('userid')})
+    this.http.post('https://stark-chamber-32733.herokuapp.com/getOrderRequests', {'userid': localStorage.getItem('userid')})
       .subscribe((data) => {
         this.orderRequests = data;
       });
   }
 
   acceptOrDiscardOrder(request, orderid) {
-    this.http.post('http://localhost:3000/acceptOrder', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/acceptOrder', {
       'userid': localStorage.getItem('userid')
       , 'orderid': orderid,
       'requestType' : request

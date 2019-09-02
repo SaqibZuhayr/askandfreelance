@@ -24,7 +24,7 @@ export class RecommededQuestionComponent implements OnInit {
 
 
   getSuggestedQuestions(){
-    this.http.post('http://localhost:3000/suggestedQuestions', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/suggestedQuestions', {
       'questionID': this.questionID
     })
       .subscribe((data) => {

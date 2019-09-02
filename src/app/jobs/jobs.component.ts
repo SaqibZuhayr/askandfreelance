@@ -17,7 +17,7 @@ export class JobsComponent implements OnInit {
 
   ngOnInit() {
     // this.jobTrending();
-    this.http.post('http://localhost:3000/viewjobs', {}).subscribe((data) => {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/viewjobs', {}).subscribe((data) => {
       console.log(data);
       // @ts-ignore
       this.jobs = data;

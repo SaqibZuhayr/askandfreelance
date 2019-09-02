@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
       swal("Signup", "UnSuccessful", "error");
     }
 
-    this.http.post('http://localhost:3000/user', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/user', {
       'first_name': form.value.firstext,
       'last_name': form.value.lasttext,
       'email': form.value.emailtext,

@@ -32,7 +32,7 @@ export class PostquestionComponent implements OnInit {
     }
     console.log('postQuestion');
     console.log(this.userid);
-    this.http.post('http://localhost:3000/postquestion', {
+    this.http.post('https://stark-chamber-32733.herokuapp.com/postquestion', {
       'category': form.value.title,
       'question': form.value.question, 'userid': this.userid, 'askedBy': this.username
     }).subscribe((data) => {

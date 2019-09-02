@@ -30,7 +30,7 @@ nform: FormGroup;
     }
     console.log(form.value);
     console.log(this.nform.value.image);
-    this.http.post('http://localhost:3000/addgig', {'gig': form.value,
+    this.http.post('https://stark-chamber-32733.herokuapp.com/addgig', {'gig': form.value,
       'image': this.imagePreview,
       'userid': localStorage.getItem('userid'),
       'username': localStorage.getItem('username')
